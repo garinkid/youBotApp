@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width = "fill_parent"
+	android:layout_height = "fill_parent"
+	android:orientation = "vertical"
+	android:padding ="20dip">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="20dip"
+		android:orientation ="horizontal">
+		<Button android:id="@+id/bluetooth_button"
+			android:text="@string/scan_devices"
+			android:layout_height="wrap_content"
+			android:layout_width="140dip"
+			android:gravity="center_vertical"
+			android:paddingLeft = "20dip" 
+	   		android:textSize="15dip" />
+		<TextView android:text = "@string/bluetooth_note" 
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"
+			android:textStyle = "italic"
+			android:paddingLeft ="10dip" 
+			android:gravity ="top"/>
+	</LinearLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout android:paddingRight="5dip"
+			android:paddingLeft="5dip"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent">
+			<TextView android:id="@+id/title_paired_devices"
+				android:text="@string/text_paired_devices"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+        		android:background="#666"
+       			android:textColor="#fff"
+				android:textSize="15dip" 
+				android:paddingLeft="20dp" />
+		</LinearLayout>
+		<LinearLayout android:paddingRight="5dip"
+			android:paddingLeft="5dip"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent">
+			<TextView android:id="@+id/title_new_devices"
+				android:text="@string/text_new_devices"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+        		android:background="#666"
+        		android:textColor="#fff"
+				android:textSize="15dip" 
+				android:paddingLeft="20dp" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout android:paddingRight="5dip"
+			android:paddingLeft="5dip"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent">
+			<ListView android:id = "@+id/paired_devices"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:stackFromBottom="False"/>
+		</LinearLayout>
+		<LinearLayout android:paddingRight="5dip"
+			android:paddingLeft="5dip"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent">
+			<ListView android:id="@+id/new_devices"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:stackFromBottom="false"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

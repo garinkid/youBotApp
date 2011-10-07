@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<array name="connection_type">
+		<item>@string/connect_bluetooth</item>
+		<item>@string/connect_wireless</item>
+		<!--  <item>@string/connect_wireless</item> -->
+	</array>
+	<array name="controller_type">
+		<item>@string/controller_simple</item>
+		<item>@string/controller_normal</item>
+		<item>@string/controller_accel</item>
+		<item>@string/controller_slider</item>
+		<item>@string/controller_cartesian</item>
+	</array>
+</resources>

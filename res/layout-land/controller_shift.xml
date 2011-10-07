@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="horizontal"
+	android:padding="20dip">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:layout_weight="1">
+		<TextView android:text="@string/base_controller"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:padding="20dip"
+			android:textSize="15dip"/>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:paddingBottom="10dip">
+			<TextView android:text="@string/base_movement"
+				android:layout_width = "fill_parent"
+				android:layout_weight="1"
+				android:layout_height= "wrap_content"/>
+			<TextView android:id="@+id/base_movement_text"
+				android:layout_width = "fill_parent"
+				android:layout_weight="1"
+				android:gravity="right"
+				android:layout_height= "wrap_content"/>
+		</LinearLayout>	
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:gravity="bottom">
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<Button	android:id="@+id/stop_base_button"
+					android:text="@string/stop_base"
+					android:textSize="15dip"
+					android:layout_height="wrap_content"
+					android:layout_width="fill_parent"
+					android:layout_weight="1"/>
+				<Button
+					android:id="@+id/connect_button"
+					android:text="@string/connect"
+					android:textSize="15dip"
+					android:layout_height="wrap_content"
+					android:layout_width="fill_parent"
+					android:layout_weight="1"/>
+			</LinearLayout>
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<Button	android:id="@+id/return_main_menu"
+					android:text="@string/main_menu"
+					android:textSize="15dip"
+					android:layout_height="wrap_content"
+					android:layout_width="fill_parent"
+					android:layout_weight="1"/>
+				<Button	android:id="@+id/switch_controller"
+					android:text="@string/controller_switch_mode"
+					android:textSize="15dip"
+					android:layout_height="wrap_content"
+					android:layout_width="fill_parent"
+					android:layout_weight="1"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="center">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation = "horizontal"
+			android:gravity= "center">
+			<ImageView	android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_up"
+				android:id="@+id/forward"
+				android:layout_gravity="center"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation = "horizontal"
+			android:gravity= "center">
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_left"
+				android:id="@+id/left_button"
+				android:layout_gravity="center"/>
+			<ImageView	android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/stop_button"
+				android:src="@drawable/arrow_none"
+				android:layout_gravity="center"/>
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_right"
+				android:id="@+id/right_button"
+				android:layout_gravity="center"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation = "horizontal"
+			android:gravity= "center">
+			<ImageView	android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_down"
+				android:id="@+id/backward"
+				android:layout_gravity="center"/>>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

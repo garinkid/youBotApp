@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/controller_normal"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding = "20dip">
+	<TextView android:text="@string/base_controller"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:padding="20dip"
+		android:textSize="15dip"/>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:paddingBottom="10dip">
+		<TextView android:text="@string/base_movement"
+			android:layout_width = "fill_parent"
+			android:layout_weight="1"
+			android:layout_height= "wrap_content"/>
+		<TextView android:id="@+id/base_movement_text"
+			android:layout_width = "fill_parent"
+			android:layout_weight="1"
+			android:gravity="right"
+			android:layout_height= "wrap_content"/>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="10dip">
+			<SeekBar
+			  android:padding="15dip"
+			  android:id="@+id/slider_longitudinal"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:progressDrawable="@drawable/slider_main"
+			  android:thumb="@drawable/slider" />
+			<TextView android:text="@string/longitudinal"
+				android:gravity="left"
+				android:layout_width = "fill_parent"
+				android:layout_height= "wrap_content"/>
+		</RelativeLayout>
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<SeekBar
+			  android:padding="15dip"
+			  android:id="@+id/slider_transversal"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:progressDrawable="@drawable/slider_main"
+			  android:thumb="@drawable/slider" />
+			<TextView android:text="@string/transversal"
+				android:gravity="left"
+				android:layout_width = "fill_parent"
+				android:layout_height= "wrap_content"/>
+		</RelativeLayout>
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<SeekBar
+			  android:padding="15dip"
+			  android:id="@+id/slider_angular"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:progressDrawable="@drawable/slider_main"
+			  android:thumb="@drawable/slider" />
+			<TextView android:text="@string/angular"
+				android:gravity="left"
+				android:layout_width = "fill_parent"
+				android:layout_height= "wrap_content"/>
+		</RelativeLayout>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal"
+		android:gravity="bottom">	
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_weight="1">
+			<Button	android:id="@+id/stop_base_button"
+				android:text="@string/stop_base"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_weight="1"/>
+			<Button android:id="@+id/return_main_menu"
+				android:text="@string/main_menu"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_weight="1"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_weight="1">
+			<Button	android:id="@+id/connect_button"
+				android:text="@string/connect"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_weight="1"/>
+			<Button	android:id="@+id/switch_controller"
+				android:text="@string/controller_switch_mode"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_gravity="bottom"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

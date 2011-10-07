@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="help">Help</string>
+    <string name="help_title">KUKA youBot Android App</string>
+    <string name="help_text">
+    	KUKA youBot Android App provide an alternative user interface (UI) for 
+    	controlling youBot. Unlike "button-type" controller (joypad or keyboard), Android accommodate UI design. 
+    	Therefore, an intuitive and user friendly controller for KUKA youBot Android can be developed.    	
+    </string>
+    <string name="help_connection_text">
+    	KUKA youBot Android App uses RFCOMM Bluetooth connection where Android phone act as the client and 
+    	youBotAndroid act as the server. youBotandroid is another program which can be run 
+    	on a machine that is connected to KUKA youBot or KUKA youBot PC. youBot API are implemented in 
+    	youBotAndroid. Pairing process should be performed before running youBotAndroid.
+    </string>
+    <string name="help_controller_text">
+		Currently, Android App can control the base movement of KUKA youBot.  
+    </string>
+    
+    <string name="copyright_text_landscape">
+    Copyright (c) 2011 - All rights reserved. \n
+ 	Hochschule Bonn-Rhein-Sieg - University of Applied Sciences. \n
+	Computer Science Department.
+    </string>
+    
+    <string name="copyright_text_portrait">
+    Copyright (c) 2011. \n
+    All rights reserved. \n
+ 	Hochschule Bonn-Rhein-Sieg. \n
+ 	University of Applied Sciences. \n
+	Computer Science Department. 
+    </string>
+    
+    
+    <string name="about">About...</string>
+    <string name="title">KUKA youBot Controller</string>
+    <string name="base_movement">Base movement :</string>
+    <string name="app_name">youBot</string>
+    <string name="select_device">Select Device</string>
+    <string name="main_menu">Main menu</string>
+    <string name="select_controller_mode">controller mode</string>
+    <string name="controller">Controller</string>
+    <string name="controller_switch_mode">Switch mode</string>
+	<string name="quit">..Quit..</string>
+	
+	<string name="base_controller">BASE CONTROLLER</string>
+	<string name="stop_base">Stop</string>
+	<string name="velocity">Velocity</string>
+	<string name="steering_angle">Steering Angle</string>
+	
+	<string name="longitudinal">Longitudinal</string>
+	<string name="transversal">Transversal</string>
+	<string name="angular">Angular</string>
+	
+	<string name="forward">FORWARD</string>
+	<string name="left">LEFT</string>
+	<string name="right">RIGHT</string>
+	<string name="backward">BACKWARD</string>
+	<string name="CCW">CCW</string>
+	<string name="CW">CW</string>
+	
+	<string name="on">On</string>
+	<string name="off">Off</string>
+	
+	<string name="connect">Connect</string>
+	<string name="connection">Connection</string>
+	<string name="connect_bluetooth">Bluetooth</string>
+	<string name="bluetooth_note">"important note : Pairing process with YouBot device should be executed BEFORE running YouBot API and running Android Controller GUI"</string>
+	<string name="connect_wireless">Wireless</string>
+	<string name="no_paired_device">No paired device</string>
+	<string name="text_paired_devices">PAIRED DEVICE</string>
+	<string name="text_new_devices">FOUND DEVICE</string>
+	
+	<string name="scan_devices">Scan</string>
+	<string name="scanning_devices">Scanning...</string>
+	<string name="available_devices">Available Devices</string>
+	<string name="no_found_device">No new device</string>
+	
+	<!-- Controller Mode -->
+	<string name="controller_simple">SHIFT mode</string>
+	<string name="controller_normal">DRIVE mode</string>
+	<string name="controller_accel">ACCEL mode</string>
+	<string name="controller_slider">SLIDER mode</string>
+	<string name="controller_cartesian">CARTESIAN mode</string>
+</resources>
+
+
