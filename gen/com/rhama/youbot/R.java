@@ -35,13 +35,14 @@ public final class R {
         public static final int arrow_up_right=0x7f02000b;
         public static final int gray_background=0x7f02000c;
         public static final int icon=0x7f02000d;
-        public static final int kuka_landscape=0x7f02000e;
-        public static final int kuka_portrait=0x7f02000f;
-        public static final int slider=0x7f020010;
-        public static final int slider_main=0x7f020011;
-        public static final int slider_main_vertical=0x7f020012;
-        public static final int slider_vertical=0x7f020013;
-        public static final int white_background=0x7f020014;
+        public static final int icon00=0x7f02000e;
+        public static final int kuka_landscape=0x7f02000f;
+        public static final int kuka_portrait=0x7f020010;
+        public static final int slider=0x7f020011;
+        public static final int slider_main=0x7f020012;
+        public static final int slider_main_vertical=0x7f020013;
+        public static final int slider_vertical=0x7f020014;
+        public static final int white_background=0x7f020015;
     }
     public static final class id {
         public static final int accel_animation=0x7f070001;
