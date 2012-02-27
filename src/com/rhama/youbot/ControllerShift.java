@@ -152,26 +152,26 @@ public class ControllerShift extends Activity{
 			switch(view.getId()){
 				case R.id.forward:
 					baseMovement.addLongitudinal();
-					sendCommand(baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
+					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.backward:
 					baseMovement.reduceLongitudinal();
-					sendCommand(baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
+					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.left_button:
 					baseMovement.addTransversal();
-					sendCommand(baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
+					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.right_button:
 					baseMovement.reduceTransversal();
-					sendCommand(baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
+					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.stop_base_button:
-					sendCommand("0.0, 0.0, 0.0");
+					sendCommand("base, 0.0, 0.0, 0.0");
 					baseMovement.setStop();
 					break;
 				case R.id.stop_button:
-					sendCommand("0.0, 0.0, 0.0");
+					sendCommand("base, 0.0, 0.0, 0.0");
 					baseMovement.setStop();
 					break;
 				case R.id.connect_button:
@@ -183,7 +183,7 @@ public class ControllerShift extends Activity{
 					}
 					break;
 				case R.id.switch_controller:
-					sendCommand("0.0, 0.0, 0.0");
+					sendCommand("base, 0.0, 0.0, 0.0");
 					finish();
 					Intent controller = new Intent(view.getContext(), ControllerDrive.class);
 					controller.putExtra(YouBot.youBotAddressKey, youBotAddress);

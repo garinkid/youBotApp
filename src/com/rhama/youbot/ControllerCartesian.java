@@ -76,7 +76,7 @@ public class ControllerCartesian extends Activity{
 	private SeekBar horizontalSeekBar;
 	private VerticalSeekBar verticalSeekBar;
 	private BaseMovement youBotBaseMovement = new BaseMovement();
-	int maxSeekBar = 8;
+	int maxSeekBar = 100;
 	int middleOffset = maxSeekBar / 2 ;
 	
 	private BluetoothAdapter rBluetoothAdapter;
@@ -158,7 +158,7 @@ public class ControllerCartesian extends Activity{
 		public void onClick(View view){
 			switch(view.getId()){
 				case R.id.stop_base_button:
-					sendCommand("0.0, 0.0, 0.0");	
+					sendCommand("base, 0.0, 0.0, 0.0");	
 					horizontalSeekBar.setProgress(middleOffset);
 					verticalSeekBar.setProgress(middleOffset);
 					break;
@@ -205,7 +205,7 @@ public class ControllerCartesian extends Activity{
 				
 				break;				
 			}	
-			sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
+			sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
 		}
 
 		public void onStartTrackingTouch(SeekBar seekBar) {
@@ -228,7 +228,7 @@ public class ControllerCartesian extends Activity{
 					youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * increment );
 					break;			
 				}	
-				sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
+				sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
 			}
 
 			public void onStartTrackingTouch(
@@ -257,7 +257,7 @@ public class ControllerCartesian extends Activity{
 					controlMovement(x, y);
 					break;
 				case MotionEvent.ACTION_UP:
-					sendCommand("0.0, 0.0, 0.0");	
+					sendCommand("base, 0.0, 0.0, 0.0");	
 					horizontalSeekBar.setProgress(middleOffset);
 					verticalSeekBar.setProgress(middleOffset);
 					break;
@@ -274,15 +274,15 @@ public class ControllerCartesian extends Activity{
 		int x_offset, y_offset;
 		
 		if (x < 0){
-			x_offset = (int)Math.ceil(x / x_max * 4) ; 
+			x_offset = (int)Math.ceil(x / x_max * middleOffset) ; 
 		}else{
-			x_offset = (int)Math.floor(x / x_max * 4);
+			x_offset = (int)Math.floor(x / x_max * middleOffset);
 		}
 		
 		if (y > 0){
-			y_offset = (int)Math.floor(y / y_max * 4) ; 
+			y_offset = (int)Math.floor(y / y_max * middleOffset) ; 
 		}else{
-			y_offset = (int)Math.ceil(y / y_max * 4);
+			y_offset = (int)Math.ceil(y / y_max * middleOffset);
 		}
 	
 		verticalSeekBar.setProgress(middleOffset - y_offset);	
@@ -297,10 +297,6 @@ public class ControllerCartesian extends Activity{
 		if(command.compareTo(this.oldCommand) == 0){}
 		else{
 			this.oldCommand = command;
-			if (command != "onPause"){
-				TextView baseMovementView = (TextView)findViewById(R.id.base_movement_text);
-				baseMovementView.setText(command);
-			}
 			byte[] sendCommand = command.getBytes();
 			if(rBluetoothService != null){
 				rBluetoothService.send(sendCommand);

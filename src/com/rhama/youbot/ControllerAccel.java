@@ -83,7 +83,7 @@ public class ControllerAccel extends Activity{
 	private ImageView accelAnimation;
 	private String oldCommand = "";
 	private BaseMovement youBotBaseMovement = new BaseMovement();
-	int maxSeekBar = 4;
+	int maxSeekBar = 100;
 	int middleOffset = maxSeekBar / 2 ;
 	SeekBar angularSeekBar;
 	
@@ -118,7 +118,7 @@ public class ControllerAccel extends Activity{
 		
 		// view to show base movement
 		TextView baseMovementView = (TextView)findViewById(R.id.base_movement_text);
-		baseMovementView.setText("0.0, 0.0, 0.0");
+		baseMovementView.setText("base, 0.0, 0.0, 0.0");
 		
 		// get MAC address
 		Bundle controllerSimple = getIntent().getExtras();
@@ -206,7 +206,7 @@ public class ControllerAccel extends Activity{
 						accelAnimation.setImageResource(R.drawable.arrow_none);
 					}
 					
-					sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.angularVelocity);
+					sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.angularVelocity);
 				}
 			};
 		};
@@ -232,7 +232,7 @@ public class ControllerAccel extends Activity{
 					break;
 				case R.id.switch_controller:
 					sensorManager.unregisterListener(sensorEventListener);
-					sendCommand("0.0, 0.0, 0.0");
+					sendCommand("base, 0.0, 0.0, 0.0");
 					finish();
 					Intent controller = new Intent(view.getContext(), ControllerSlider.class);
 					controller.putExtra(YouBot.youBotAddressKey, youBotAddress);
@@ -249,7 +249,7 @@ public class ControllerAccel extends Activity{
 					}else{
 						accelAnimation.setImageResource(R.drawable.arrow_none);
 						youBotBaseMovement.setStop();
-						sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
+						sendCommand("base," + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
 					}
 					break;
 				case R.id.stop_base_button:
@@ -258,7 +258,7 @@ public class ControllerAccel extends Activity{
 					}
 					angularSeekBar.setProgress(middleOffset);
 					youBotBaseMovement.setStop();
-					sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
+					sendCommand("base," + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
 					accelAnimation.setImageResource(R.drawable.arrow_none);
 					break;
 			}
@@ -279,7 +279,7 @@ public class ControllerAccel extends Activity{
 					}
 					break;				
 				}	
-				sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.angularVelocity);
+				sendCommand("base," + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.angularVelocity);
 		}
 
 		public void onStartTrackingTouch(SeekBar seekBar) {

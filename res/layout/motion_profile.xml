@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/controller_normal"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding = "20dip">
+	<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:gravity="top">
+			<Button
+				android:id="@+id/start_button"
+				android:text="@string/start"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="150dip"
+				android:layout_gravity="top"/>
+			<LinearLayout android:layout_width="fill_parent"
+	    		android:layout_height="10dip"/>
+			<Button
+				android:id="@+id/stop_button"
+				android:text="@string/stop"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="150dip"
+				android:layout_gravity="top"/>
+			<LinearLayout android:layout_width="fill_parent"
+	    		android:layout_height="10dip"/>
+			<Button
+				android:id="@+id/move_button"
+				android:text="@string/move"
+				android:textSize="15dip"
+				android:layout_height="wrap_content"
+				android:layout_width="150dip"
+				android:layout_gravity="top"/>
+		</LinearLayout>
+</LinearLayout>

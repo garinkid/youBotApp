@@ -142,7 +142,7 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 			switch(view.getId()){
 				case R.id.stop_base_button:
 					if(rBluetoothService != null){
-						sendCommand("0.0, 0.0, 0.0");					
+						sendCommand("base, 0.0, 0.0, 0.0");					
 					}					
 					break;
 				case R.id.connect_button:
@@ -181,7 +181,7 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 				}
 				break;
 			case MotionEvent.ACTION_UP:
-				String command = ("0.0, 0.0, 0.0");
+				String command = ("base, 0.0, 0.0, 0.0");
 				if(rBluetoothService != null){
 					sendCommand(command);					
 				}
@@ -222,7 +222,7 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 					angularVelocity = (Math.floor(x * 0.04)) * 25;
 				}
 			}
-			sendCommand(longitudinalVelocity + "," + "0.0" + "," + angularVelocity);
+			sendCommand("base, " + longitudinalVelocity + "," + "0.0" + "," + angularVelocity);
 		}
 	}				
 	

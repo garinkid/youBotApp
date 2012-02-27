@@ -5,11 +5,15 @@
 		<item>@string/connect_wireless</item>
 		<!--  <item>@string/connect_wireless</item> -->
 	</array>
-	<array name="controller_type">
+	<array name="base_controller_type">
 		<item>@string/controller_simple</item>
 		<item>@string/controller_normal</item>
 		<item>@string/controller_accel</item>
 		<item>@string/controller_slider</item>
 		<item>@string/controller_cartesian</item>
+	</array>
+		<array name="arm_controller_type">
+		<item>@string/joint_velocity</item>
+		<item>@string/joint_position</item>
 	</array>
 </resources>

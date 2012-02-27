@@ -9,6 +9,7 @@
     	android:debuggable="true" 
     	android:icon="@drawable/icon">
         <activity android:name=".YouBot"
+            android:screenOrientation="portrait"
          	android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,16 +24,19 @@
      	
     	<activity android:name=".Help"
     	android:label="@string/help"
+    	android:screenOrientation="portrait"
     	android:theme="@android:style/Theme.Dialog">
     	</activity>
     	
     	<activity android:name=".ControllerDrive"
     	android:label="@string/controller_normal"
+    	android:screenOrientation="portrait"
     	android:configChanges="keyboardHidden">
     	</activity>
     	
     	<activity android:name=".ControllerShift"
     	android:label="@string/controller_simple"
+    	android:screenOrientation="portrait"
     	android:configChanges="keyboardHidden">
     	</activity>
     	
@@ -48,12 +52,41 @@
     	android:screenOrientation="portrait">
     	</activity>
     	
-    	 <activity android:name="ControllerCartesian"
+    	 <activity android:name=".ControllerCartesian"
     	android:label="@string/controller_slider"
     	android:configChanges="keyboardHidden"
     	android:screenOrientation="portrait">
     	</activity>
     	
+    	<activity android:name=".ArmJointVelocity"
+    	android:label="@string/manipulator"
+    	android:configChanges="keyboardHidden"
+    	android:screenOrientation="portrait">
+    	</activity>
+    	
+    	<activity android:name=".ArmJointPosition"
+    	android:label="@string/manipulator"
+    	android:configChanges="keyboardHidden"
+    	android:screenOrientation="portrait">
+    	</activity>
+    	
+    	<activity android:name=".MotionProfile"
+    	android:label="@string/motion_profile"
+    	android:configChanges="keyboardHidden"
+    	android:screenOrientation="portrait">
+    	</activity>
+    	
+    	<activity android:name=".ArmJointPositionHelp"
+    	android:label="@string/help"
+    	android:screenOrientation="portrait"
+    	android:theme="@android:style/Theme.Dialog">
+    	</activity>
+    	
+    	<activity android:name=".ArmJointVelocityHelp"
+    	android:label="@string/help"
+    	android:screenOrientation="portrait"
+    	android:theme="@android:style/Theme.Dialog">
+    	</activity>
     	
     </application>
 </manifest>

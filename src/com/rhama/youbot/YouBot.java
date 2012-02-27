@@ -87,7 +87,16 @@ public class YouBot extends Activity implements OnClickListener{
         View selectButton = this.findViewById(R.id.select_device_button); 
         selectButton.setOnClickListener(this);
         selectButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
-    
+        
+        View manipulatorButton = this.findViewById(R.id.manipulator_button);
+        manipulatorButton.setOnClickListener(this);
+        manipulatorButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
+        /*
+        View motionProfileButton = this.findViewById(R.id.motion_profile_button);
+        motionProfileButton.setOnClickListener(this);
+        motionProfileButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
+    	*/
+        
         View controllerButton = this.findViewById(R.id.controller_button);
         controllerButton.setOnClickListener(this);
         controllerButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
@@ -132,10 +141,20 @@ public class YouBot extends Activity implements OnClickListener{
     		}
     		break;
     	case R.id.controller_button:
-    		controllerDialog();
+    		baseControllerDialog();
     		break;
+    	case R.id.manipulator_button:
+    		armControllerDialog();
+    		break;
+    	/*
+    	case R.id.motion_profile_button:
+    		Intent motionProfile = new Intent(this, MotionProfile.class);
+    		motionProfile.putExtra(youBotAddressKey, youBotAddress);
+    		startActivity(motionProfile);
+    		break;
+    	*/
     	case R.id.help_button:
-    		startActivity(new Intent (this, Help.class));
+    		startActivity(new Intent(this, Help.class));
     		break;
     	case R.id.quit_button:
     	    youBotAddress = null;
@@ -145,51 +164,72 @@ public class YouBot extends Activity implements OnClickListener{
     	}
     }
     
-    public void controllerDialog(){
+    public void baseControllerDialog(){
     	new AlertDialog.Builder(this)
-    		.setTitle(R.string.controller)
-    		.setItems(R.array.controller_type,
+    		.setTitle(R.string.base_controller)
+    		.setItems(R.array.base_controller_type,
     				new DialogInterface.OnClickListener(){
     					public void onClick(DialogInterface dialogInterface, int i){
-    						startController(i);
+    						startBaseController(i);
     					}
     				}
     		).show();
     }
     
+    
+    public void armControllerDialog(){
+    	new AlertDialog.Builder(this)
+    		.setTitle(R.string.arm_controller)
+    		.setItems(R.array.arm_controller_type,
+    				new DialogInterface.OnClickListener(){
+    					public void onClick(DialogInterface dialogInterface, int i){
+    						startArmController(i);
+    					}
+    				}
+    		).show();
+    }
      
-    public void startController(int i){
+    public void startBaseController(int i){
     	// start controller activity and add youBotAddress as an extra
+    	Intent baseController = new Intent();
     	switch(i){
     	case 0:
-    		Intent controllerSimple = new Intent(this, ControllerShift.class);
-    		controllerSimple.putExtra(youBotAddressKey, youBotAddress);
-    		startActivity(controllerSimple);
+    		baseController = new Intent(this, ControllerShift.class);
     		break;
     	case 1:
-    		Intent controllerDrive = new Intent(this, ControllerDrive.class);
-    		controllerDrive.putExtra(youBotAddressKey, youBotAddress);
-    		startActivity(controllerDrive);
+    		baseController = new Intent(this, ControllerDrive.class);
     		break;
     	case 2:
-    		Intent controllerAccel = new Intent(this, ControllerAccel.class);
-    		controllerAccel.putExtra(youBotAddressKey, youBotAddress);
-    		startActivity(controllerAccel);
+    		baseController = new Intent(this, ControllerAccel.class);
     		break;
     	case 3: 
-    		Intent controllerSlider = new Intent(this, ControllerSlider.class);
-    		controllerSlider.putExtra(youBotAddressKey, youBotAddress);
-    		startActivity(controllerSlider);
+    		baseController = new Intent(this, ControllerSlider.class);
     		break;
     	case 4: 
-    		Intent controllerCartesian = new Intent(this, ControllerCartesian.class);
-    		controllerCartesian.putExtra(youBotAddressKey, youBotAddress);
-    		startActivity(controllerCartesian);
+    		baseController = new Intent(this, ControllerCartesian.class);
     		break;
     	}
-
+    	baseController.putExtra(youBotAddressKey, youBotAddress);
+		startActivity(baseController);
     
     }
+ 
+    public void startArmController(int i){
+    	// start controller activity and add youBotAddress as an extra
+    	Intent armController = new Intent();
+    	switch(i){
+    	case 0:
+    		armController = new Intent(this, ArmJointVelocity.class);
+    		break;
+    	case 1:
+    		armController = new Intent(this, ArmJointPosition.class);
+    		break;
+    	}
+    	armController.putExtra(youBotAddressKey, youBotAddress);
+		startActivity(armController);
+    
+    }
+    
     
     public void onActivityResult(int request, int result, Intent intent){
         switch (request) {

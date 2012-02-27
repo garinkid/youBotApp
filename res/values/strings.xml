@@ -15,7 +15,9 @@
     	youBotAndroid. Pairing process should be performed before running youBotAndroid.
     </string>
     <string name="help_controller_text">
-		Currently, Android App can control the base movement of KUKA youBot.  
+		Currently, android App can control base and arm of KUKA youBot separately.
+		There are 2 ways to control the arm movement (joint position and joint velocity) 5 modes
+		to control the base movement (Shift, Drive, Accel, Slider and Cartesian).
     </string>
     
     <string name="copyright_text_landscape">
@@ -32,19 +34,23 @@
 	Computer Science Department. 
     </string>
     
-    
     <string name="about">About...</string>
     <string name="title">KUKA youBot Controller</string>
+    <string name="controller">Controller</string>
     <string name="base_movement">Base movement :</string>
+    <string name="manipulator">Manipulator</string>
     <string name="app_name">youBot</string>
     <string name="select_device">Select Device</string>
     <string name="main_menu">Main menu</string>
     <string name="select_controller_mode">controller mode</string>
-    <string name="controller">Controller</string>
+    <string name="base_controller">Base Controller</string>
     <string name="controller_switch_mode">Switch mode</string>
 	<string name="quit">..Quit..</string>
 	
-	<string name="base_controller">BASE CONTROLLER</string>
+	<string name="arm_controller">Arm Controller</string>
+	<string name="joint_velocity">Joint Velocity</string>
+	<string name="joint_position">Joint Position</string>    
+	    
 	<string name="stop_base">Stop</string>
 	<string name="velocity">Velocity</string>
 	<string name="steering_angle">Steering Angle</string>
@@ -78,11 +84,45 @@
 	<string name="no_found_device">No new device</string>
 	
 	<!-- Controller Mode -->
-	<string name="controller_simple">SHIFT mode</string>
-	<string name="controller_normal">DRIVE mode</string>
-	<string name="controller_accel">ACCEL mode</string>
-	<string name="controller_slider">SLIDER mode</string>
-	<string name="controller_cartesian">CARTESIAN mode</string>
+	<string name="controller_simple">Shift mode</string>
+	<string name="controller_normal">Drive mode</string>
+	<string name="controller_accel">Accel mode</string>
+	<string name="controller_slider">Slider mode</string>
+	<string name="controller_cartesian">Cartesian mode</string>
+	
+	<!-- Manipulator Mode -->
+	<string name="joint_1">Joint 1</string>
+	<string name="joint_2">Joint 2</string>
+	<string name="joint_3">Joint 3</string>
+	<string name="joint_4">Joint 4</string>
+	<string name="joint_5">Joint 5</string>
+	<string name="stop">Stop</string>
+	
+	<!-- Motion Profile -->
+	<string name="start">Start</string>
+	<string name="move">Move</string>
+	<string name="motion_profile">Motion Profile</string>
+	
+	<!-- arm joint position -->
+	<string name="radian">Radian</string>
+	<string name="degree">Degree</string>
+	<string name="send">Send</string>
+	<string name="arm_joint_position">Arm Joint Position</string>
+	<string name="arm_joint_velocity">Arm Joint Velocity</string>
+	<string name="joint_position_mode">Joint Position Mode</string>
+	
+	<string name="arm_joint_position_help_text">
+	    Arm joint position allows user to move youBot arm into a pose that are define through its joint angles (in radian or degree).
+	    After the desired joint angles are set, the values can be send to android pc client which will move the arm to its designated pose.
+	    The values are limited based on youBot arm joint limit.
+	    </string>
+	 
+	<string name="arm_joint_velocity_help_text">
+	    Arm joint velocity allows user to rotate a joint or joints of the KUKA youBot arm.
+	    Moving a slider to the right side will rotate the corresponding joint to positive direction.
+	    It is possible to rotate several joints at the same time.
+	    It should be noted that trying to rotate a joint outside its joint range is not recommended.
+	    </string>
 </resources>
 
 

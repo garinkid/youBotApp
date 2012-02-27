@@ -79,7 +79,7 @@ public class ControllerSlider extends Activity {
 	private BaseMovement youBotBaseMovement = new BaseMovement();
 	private Button stopButtonView, connectView, switchView, returnView;
 	
-	int maxSeekBar = 8;
+	int maxSeekBar = 100;
 	int middleOffset = maxSeekBar / 2 ;
 		
 	public void onCreate(Bundle savedInstanceState){
@@ -173,7 +173,7 @@ public class ControllerSlider extends Activity {
 						youBotBaseMovement.setAngular(  (- ( progress - middleOffset ) ) * increment );
 					}
 				}
-				sendCommand(youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
+				sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
 		}
 
 		public void onStartTrackingTouch(SeekBar seekBar) {
@@ -199,7 +199,7 @@ public class ControllerSlider extends Activity {
 					longitudinalSeekBar.setProgress(middleOffset);
 					transversalSeekBar.setProgress(middleOffset);
 					angularSeekBar.setProgress(middleOffset);
-					sendCommand(youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.longitudinalVelocity +", " + youBotBaseMovement.angularVelocity);
+					sendCommand("base, " + youBotBaseMovement.transversalVelocity + ", "+ youBotBaseMovement.longitudinalVelocity +", " + youBotBaseMovement.angularVelocity);
 					break;
 				case R.id.connect_button:
 					if(youBot != null && rBluetoothService != null){
@@ -210,7 +210,7 @@ public class ControllerSlider extends Activity {
 					}
 					break;
 				case R.id.switch_controller:
-					sendCommand("0.0, 0.0, 0.0");
+					sendCommand("base, 0.0, 0.0, 0.0");
 					finish();
 					Intent controller = new Intent(view.getContext(), ControllerCartesian.class);
 					controller.putExtra(YouBot.youBotAddressKey, youBotAddress);
