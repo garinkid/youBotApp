@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/controller_normal"
-	android:orientation="vertical"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:padding = "20dip">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dip"
+    android:title="@string/controller_normal" >
+
 	<LinearLayout android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
@@ -243,7 +244,7 @@
 	
 	<LinearLayout android:layout_width="wrap_content"
 			android:paddingTop = "20dip"
-			android:layout_height="fill_parent"
+			android:layout_height="wrap_content"
 			android:gravity = "bottom"
 			android:orientation="horizontal">
 			<Button
@@ -260,7 +261,5 @@
 				android:layout_height="wrap_content"
 				android:layout_width="150dip"
 				android:layout_weight="1"/>
-		</LinearLayout>
-
-	    
+		</LinearLayout>  
 </LinearLayout>

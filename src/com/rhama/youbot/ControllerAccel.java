@@ -83,7 +83,7 @@ public class ControllerAccel extends Activity{
 	private ImageView accelAnimation;
 	private String oldCommand = "";
 	private BaseMovement youBotBaseMovement = new BaseMovement();
-	int maxSeekBar = 100;
+	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
 	SeekBar angularSeekBar;
 	
@@ -179,10 +179,10 @@ public class ControllerAccel extends Activity{
 							//check the direction of the inclination
 							
 							if (deltaRoll > 0 ){
-								youBotBaseMovement.setTransversal(70.0);
+								youBotBaseMovement.setTransversal(0.70);
 								accelAnimation.setImageResource(R.drawable.arrow_left);
 							}else{
-								youBotBaseMovement.setTransversal(-70.0);
+								youBotBaseMovement.setTransversal(-0.70);
 								accelAnimation.setImageResource(R.drawable.arrow_right);
 							}
 							youBotBaseMovement.setLongitudinal(0.0);
@@ -191,10 +191,10 @@ public class ControllerAccel extends Activity{
 							//check the direction of the inclination
 							
 							if (deltaPitch > 0){
-								youBotBaseMovement.setLongitudinal(70.0);
+								youBotBaseMovement.setLongitudinal(0.70);
 								accelAnimation.setImageResource(R.drawable.arrow_up);
 							}else{
-								youBotBaseMovement.setLongitudinal(-70.0);
+								youBotBaseMovement.setLongitudinal(-0.70);
 								accelAnimation.setImageResource(R.drawable.arrow_down);
 							}
 							youBotBaseMovement.setTransversal(0.0);
@@ -269,13 +269,12 @@ public class ControllerAccel extends Activity{
 
 	OnSeekBarChangeListener onSeekBarChangeListener = new OnSeekBarChangeListener(){
 		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				int increment = 100 / middleOffset;
 				switch(seekBar.getId()){
 				case R.id.slider_angular:
 					if(youBotBaseMovement.longitudinalVelocity < 0 ){
-						youBotBaseMovement.setAngular( ( progress - middleOffset) * increment);
+						youBotBaseMovement.setAngular( ( progress - middleOffset) * (1.0 / middleOffset));
 					}else{
-						youBotBaseMovement.setAngular( ( middleOffset - progress) * increment);
+						youBotBaseMovement.setAngular( ( middleOffset - progress) * (1.0 / middleOffset));
 					}
 					break;				
 				}	

@@ -79,7 +79,7 @@ public class ControllerSlider extends Activity {
 	private BaseMovement youBotBaseMovement = new BaseMovement();
 	private Button stopButtonView, connectView, switchView, returnView;
 	
-	int maxSeekBar = 100;
+	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
 		
 	public void onCreate(Bundle savedInstanceState){
@@ -158,19 +158,18 @@ public class ControllerSlider extends Activity {
 	
 	OnSeekBarChangeListener onSeekBarChangeListener = new OnSeekBarChangeListener(){
 		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				int increment = 100 / middleOffset;
 				switch(seekBar.getId()){
 				case R.id.slider_longitudinal:
-					youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * increment );
+					youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * (1.0 / middleOffset) );
 					break;
 				case R.id.slider_transversal:
-					youBotBaseMovement.setTransversal( (-( progress - middleOffset )) * increment );
+					youBotBaseMovement.setTransversal( (-( progress - middleOffset )) *(1.0 / middleOffset) );
 					break;
 				case R.id.slider_angular:
 					if (youBotBaseMovement.longitudinalVelocity < 0 ){
-						youBotBaseMovement.setAngular(  ( progress - middleOffset ) * increment );
+						youBotBaseMovement.setAngular(  ( progress - middleOffset ) * (1.0 / middleOffset) );
 					}else{
-						youBotBaseMovement.setAngular(  (- ( progress - middleOffset ) ) * increment );
+						youBotBaseMovement.setAngular(  (- ( progress - middleOffset ) ) * (1.0 / middleOffset) );
 					}
 				}
 				sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);

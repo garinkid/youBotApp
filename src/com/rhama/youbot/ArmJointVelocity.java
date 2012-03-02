@@ -78,12 +78,12 @@ public class ArmJointVelocity extends Activity {
 	private BluetoothService rBluetoothService = null;
 	private BluetoothAdapter rBluetoothAdapter;
 	private BluetoothDevice youBot = null;
-	private BaseMovement youBotBaseMovement = new BaseMovement();
 	private SeekBar joint1SeekBar, joint2SeekBar, joint3SeekBar, joint4SeekBar, joint5SeekBar;
 	
 	private Intent armController;
 	
-	int maxSeekBar = 100;
+	int maxSeekBar = 50;
+	float maxVelocity = (float)1.57;
 	int middleOffset = maxSeekBar / 2 ;
 	
 	double joint1, joint2, joint3, joint4, joint5;
@@ -149,7 +149,13 @@ public class ArmJointVelocity extends Activity {
 	public synchronized void onPause(){
 		super.onPause();
 		if(rBluetoothService != null){
-			sendCommand("manipulator ,0.0, 0.0, 0.0, 0.0, 0.0");
+			sendCommand("manipulator, 0.0, 0.0, 0.0, 0.0, 0.0");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			sendCommand("onPause");
 		}
 	}
@@ -165,6 +171,16 @@ public class ArmJointVelocity extends Activity {
 	@Override
 	protected void onDestroy(){
 		Log.d(TAG, "ON_DESTROY" );
+		if(rBluetoothService != null){
+			sendCommand("manipulator ,0.0, 0.0, 0.0, 0.0, 0.0");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			sendCommand("onPause");
+		}
 		super.onDestroy();
 	}
 	
@@ -200,22 +216,21 @@ public class ArmJointVelocity extends Activity {
 	
 	OnSeekBarChangeListener onSeekBarChangeListener = new OnSeekBarChangeListener(){
 		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				int increment = 100 / middleOffset;
 				switch(seekBar.getId()){
 				case R.id.slider_joint_1:
-					joint1 = (joint1SeekBar.getProgress() - middleOffset) * 0.25;
+					joint1 = (joint1SeekBar.getProgress() - middleOffset) * (1.0 / middleOffset);
 					break;
 				case R.id.slider_joint_2:
-					joint2 = (joint2SeekBar.getProgress() - middleOffset) * 0.25;
+					joint2 = (joint2SeekBar.getProgress() - middleOffset) *  (1.0 / middleOffset);
 					break;
 				case R.id.slider_joint_3:
-					joint3 = (joint3SeekBar.getProgress() - middleOffset) * 0.25;
+					joint3 = (joint3SeekBar.getProgress() - middleOffset) *  (1.0 / middleOffset);
 					break;
 				case R.id.slider_joint_4:
-					joint4 = (joint4SeekBar.getProgress() - middleOffset) * 0.25;
+					joint4 = (joint4SeekBar.getProgress() - middleOffset) *  (1.0 / middleOffset);
 					break;
 				case R.id.slider_joint_5:
-					joint5 = (joint5SeekBar.getProgress() - middleOffset) * 0.25;
+					joint5 = (joint5SeekBar.getProgress() - middleOffset) *  (1.0 / middleOffset);
 					break;
 				}
 				sendCommand("manipulator,"+joint1 +"," +joint2+ ","+ joint3 + ","+ joint4 + ","+ joint5);
@@ -260,6 +275,7 @@ public class ArmJointVelocity extends Activity {
 	};
 	
 	public void sendCommand(String command){
+		//Log.i(TAG, command);
 		if(rBluetoothService != null){
 			byte[] sendCommand = command.getBytes();
 			rBluetoothService.send(sendCommand);

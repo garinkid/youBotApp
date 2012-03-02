@@ -204,22 +204,22 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 		if(Math.abs(xyVector) < 100){	
 			if(y > 0){
 				//forward
-				longitudinalVelocity = (Math.floor(xyVector * 0.04) * 25);
+				longitudinalVelocity = (Math.floor(xyVector * 0.04) * 0.25);
 				
 				if(x < 0){
-					angularVelocity = -( (Math.ceil(x * 0.04)) * 25 );
+					angularVelocity = -( (Math.ceil(x * 0.04)) * 0.25 );
 				}else{
-					angularVelocity = -( (Math.floor(x * 0.04)) * 25 );
+					angularVelocity = -( (Math.floor(x * 0.04)) * 0.25 );
 				}
 				
 			}else{
 				//backward
-				longitudinalVelocity = -(Math.floor(xyVector * 0.04) * 25);
+				longitudinalVelocity = -(Math.floor(xyVector * 0.04) * 0.25);
 				
 				if(x < 0){
-					angularVelocity = (Math.ceil(x * 0.04)) * 25;
+					angularVelocity = (Math.ceil(x * 0.04)) * 0.25;
 				}else{
-					angularVelocity = (Math.floor(x * 0.04)) * 25;
+					angularVelocity = (Math.floor(x * 0.04)) * 0.25;
 				}
 			}
 			sendCommand("base, " + longitudinalVelocity + "," + "0.0" + "," + angularVelocity);

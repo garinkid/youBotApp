@@ -54,31 +54,6 @@ public class BaseMovement {
 	double transversalVelocity;
 	double angularVelocity;
 	
-	
-	public void addLongitudinal(){
-		if(this.longitudinalVelocity < 76){
-			this.longitudinalVelocity = this.longitudinalVelocity + 25;
-		}
-	}
-	
-	public void reduceLongitudinal(){
-		if(this.longitudinalVelocity > -76){
-			this.longitudinalVelocity = this.longitudinalVelocity - 25; 
-		}
-	}
-	
-	public void addTransversal(){
-		if(this.transversalVelocity < 76){
-			this.transversalVelocity = this.transversalVelocity + 25;
-		}
-	}
-	
-	public void reduceTransversal(){
-		if(this.transversalVelocity > -76){
-			this.transversalVelocity = this.transversalVelocity - 25; 
-		}
-	}
-	
 	public void setStop(){
 		this.longitudinalVelocity = 0 ;
 		this.transversalVelocity = 0 ;

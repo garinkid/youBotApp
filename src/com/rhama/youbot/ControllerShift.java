@@ -151,19 +151,39 @@ public class ControllerShift extends Activity{
 		public void onClick(View view) {
 			switch(view.getId()){
 				case R.id.forward:
-					baseMovement.addLongitudinal();
+					if (baseMovement.longitudinalVelocity < 0.9){
+						baseMovement.longitudinalVelocity = baseMovement.longitudinalVelocity + 0.1;
+					}else{
+						baseMovement.longitudinalVelocity = 1;
+					}
+					baseMovement.longitudinalVelocity = (double)Math.round(baseMovement.longitudinalVelocity * 10) / 10;
 					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.backward:
-					baseMovement.reduceLongitudinal();
+					if (baseMovement.longitudinalVelocity > -0.9){
+						baseMovement.longitudinalVelocity = baseMovement.longitudinalVelocity - 0.1;
+					}else{
+						baseMovement.longitudinalVelocity = -1;
+					}
+					baseMovement.longitudinalVelocity = (double)Math.round(baseMovement.longitudinalVelocity * 10) / 10;
 					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.left_button:
-					baseMovement.addTransversal();
+					if (baseMovement.transversalVelocity < 0.9){
+						baseMovement.transversalVelocity = baseMovement.transversalVelocity + 0.1;
+					}else{
+						baseMovement.transversalVelocity = 1;
+					}
+					baseMovement.transversalVelocity = (double)Math.round(baseMovement.transversalVelocity * 10) / 10;
 					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.right_button:
-					baseMovement.reduceTransversal();
+					if (baseMovement.transversalVelocity > -0.9){
+						baseMovement.transversalVelocity = baseMovement.transversalVelocity - 0.1;
+					}else{
+						baseMovement.transversalVelocity = -1;
+					}
+					baseMovement.transversalVelocity = (double)Math.round(baseMovement.transversalVelocity * 10) / 10;
 					sendCommand("base, " + baseMovement.longitudinalVelocity + ", "+ baseMovement.transversalVelocity +", 0.0");
 					break;
 				case R.id.stop_base_button:

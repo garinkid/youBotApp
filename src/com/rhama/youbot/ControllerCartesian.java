@@ -76,7 +76,7 @@ public class ControllerCartesian extends Activity{
 	private SeekBar horizontalSeekBar;
 	private VerticalSeekBar verticalSeekBar;
 	private BaseMovement youBotBaseMovement = new BaseMovement();
-	int maxSeekBar = 100;
+	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
 	
 	private BluetoothAdapter rBluetoothAdapter;
@@ -190,17 +190,11 @@ public class ControllerCartesian extends Activity{
 		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 			int increment = 100 / middleOffset;
 			switch(seekBar.getId()){
-			case R.id.slider_longitudinal:
-				youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * increment );
-				break;
-			case R.id.slider_transversal:
-				youBotBaseMovement.setTransversal( ( progress - middleOffset ) * increment );
-				break;
 			case R.id.slider_angular:
 				if (youBotBaseMovement.longitudinalVelocity < 0 ){
-					youBotBaseMovement.setAngular(  ( progress - middleOffset ) * increment );
+					youBotBaseMovement.setAngular(  ( progress - middleOffset ) * (1.0 / middleOffset) );
 				}else{
-					youBotBaseMovement.setAngular(  (- ( progress - middleOffset ) ) * increment );
+					youBotBaseMovement.setAngular(  (- ( progress - middleOffset ) ) * (1.0 / middleOffset) );
 				}
 				
 				break;				
@@ -222,10 +216,9 @@ public class ControllerCartesian extends Activity{
 	 VerticalSeekBar.OnSeekBarChangeListener onVerticalSeekBarChangeListener = new VerticalSeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(VerticalSeekBar seekBar, int progress, boolean fromUser) {
-				int increment = 100 / middleOffset;
 				switch(seekBar.getId()){
 				case R.id.slider_longitudinal:
-					youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * increment );
+					youBotBaseMovement.setLongitudinal( ( progress - middleOffset ) * (1.0 / middleOffset) );
 					break;			
 				}	
 				sendCommand("base, " + youBotBaseMovement.longitudinalVelocity +", " +youBotBaseMovement.transversalVelocity + ","+ youBotBaseMovement.angularVelocity);
