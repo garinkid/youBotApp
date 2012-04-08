@@ -13,7 +13,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/arm_joint_velocity"
-		    android:textSize="20dip" />
+		    android:textSize="20sp" />
 		<ImageView
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
@@ -34,11 +34,11 @@
 			<TextView android:text="@string/joint_1"
 				android:gravity="center_vertical"
 				android:layout_width = "wrap_content"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_height= "fill_parent"/>
 			<SeekBar
 			  android:id="@+id/slider_joint_1"
-			  android:layout_width="fill_parent"
+			  android:layout_width="220dip"
 			  android:layout_height="wrap_content"
 			  android:paddingLeft="10dip"
 			  android:paddingRight="10dip"
@@ -53,11 +53,11 @@
 			<TextView android:text="@string/joint_2"
 				android:gravity="center_vertical"
 				android:layout_width = "wrap_content"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_height= "fill_parent"/>
 			<SeekBar
 			  android:id="@+id/slider_joint_2"
-			  android:layout_width="fill_parent"
+			  android:layout_width="220dip"
 			  android:layout_height="wrap_content"
 			  android:paddingLeft="10dip"
 			  android:paddingRight="10dip"
@@ -72,11 +72,11 @@
 			<TextView android:text="@string/joint_3"
 				android:gravity="center_vertical"
 				android:layout_width = "wrap_content"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_height= "fill_parent"/>
 			<SeekBar
 			  android:id="@+id/slider_joint_3"
-			  android:layout_width="fill_parent"
+			  android:layout_width="220dip"
 			  android:layout_height="wrap_content"
 			  android:paddingLeft="10dip"
 			  android:paddingRight="10dip"
@@ -91,11 +91,11 @@
 			<TextView android:text="@string/joint_4"
 				android:gravity="center_vertical"
 				android:layout_width = "wrap_content"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_height= "fill_parent"/>
 			<SeekBar
 			  android:id="@+id/slider_joint_4"
-			  android:layout_width="fill_parent"
+			  android:layout_width="220dip"
 			  android:layout_height="wrap_content"
 			  android:paddingLeft="10dip"
 			  android:paddingRight="10dip"
@@ -110,11 +110,11 @@
 			<TextView android:text="@string/joint_5"
 				android:gravity="center_vertical"
 				android:layout_width = "wrap_content"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_height= "fill_parent"/>
 			<SeekBar
 			  android:id="@+id/slider_joint_5"
-			  android:layout_width="fill_parent"
+			  android:layout_width="220dip"
 			  android:layout_height="wrap_content"
 			  android:paddingLeft="10dip"
 			  android:paddingRight="10dip"
@@ -130,14 +130,14 @@
 			<Button
 				android:id="@+id/stop_button"
 				android:text="@string/stop"
-				android:textSize="15dip"
+				android:textSize="15sp"
 				android:layout_height="wrap_content"
 				android:layout_width="150dip"
 				android:layout_weight="1"/>
 			<Button
 				android:id="@+id/change_mode"
 				android:text="@string/controller_switch_mode"
-				android:textSize="15dip"
+				android:textSize="15sp"
 				android:layout_height="wrap_content"
 				android:layout_width="150dip"
 				android:layout_weight="1"/>

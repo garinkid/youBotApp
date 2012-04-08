@@ -16,7 +16,7 @@
     </string>
     <string name="help_controller_text">
 		Currently, android App can control base and arm of KUKA youBot separately.
-		There are 2 ways to control the arm movement (joint position and joint velocity) 5 modes
+		There are 2 ways to control the arm movement (joint position and joint velocity) and 5 modes
 		to control the base movement (Shift, Drive, Accel, Slider and Cartesian).
     </string>
     
@@ -35,7 +35,7 @@
     </string>
     
     <string name="about">About...</string>
-    <string name="title">KUKA youBot Controller</string>
+    <string name="title">KUKA youBot App</string>
     <string name="controller">Controller</string>
     <string name="base_movement">Base movement :</string>
     <string name="manipulator">Manipulator</string>
@@ -49,7 +49,8 @@
 	
 	<string name="arm_controller">Arm Controller</string>
 	<string name="joint_velocity">Joint Velocity</string>
-	<string name="joint_position">Joint Position</string>    
+	<string name="joint_position">Joint Position</string>  
+	<string name="pose">Pose</string>  
 	    
 	<string name="stop_base">Stop</string>
 	<string name="velocity">Velocity</string>
@@ -68,6 +69,9 @@
 	
 	<string name="on">On</string>
 	<string name="off">Off</string>
+
+	<string name="open">Open</string>
+	<string name="close">Close</string>
 	
 	<string name="connect">Connect</string>
 	<string name="connection">Connection</string>
@@ -111,6 +115,12 @@
 	<string name="arm_joint_velocity">Arm Joint Velocity</string>
 	<string name="joint_position_mode">Joint Position Mode</string>
 	
+	<!-- arm joint position -->
+	<string name="arm_folded_pose">Folded</string>
+	<string name="arm_pose">Arm Pose</string>
+	<string name="arm_candle_pose">Candle</string>
+	
+	
 	<string name="arm_joint_position_help_text">
 	    Arm joint position allows user to move youBot arm into a pose that are define through its joint angles (in radian or degree).
 	    After the desired joint angles are set, the values can be send to android pc client which will move the arm to its designated pose.
@@ -123,6 +133,22 @@
 	    It is possible to rotate several joints at the same time.
 	    It should be noted that trying to rotate a joint outside its joint range is not recommended.
 	    </string>
+	    
+	 <!-- maze game -->
+	 <string name="maze">Maze Game</string>
+	 <string name="game_off">Accel not active</string>
+	 <string name="game_on">Accel Active</string>
+	 <string name="play">Play</string>
+	 <string name="set_position">Reset position</string>
+	 <string name="gripper">Gripper :</string>
+	 
+	 <string name="game_mode">Mode :</string>
+	 <string name="cartesian_mode">Cartesian</string>
+	 <string name="accel_mode">Accel</string>
+	 
+	 <string name="x">X</string>
+	 <string name="y">Y</string>
+	 <string name="invert">Invert</string>
 </resources>
 
 

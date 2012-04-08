@@ -5,26 +5,23 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:padding = "20dip">
-
 	<LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
 	    android:padding="5dip" >
-
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:paddingTop="5dip"
 	        android:text="@string/arm_joint_position"
-	        android:textSize="15dip"
+	        android:textSize="15sp"
 	        android:textStyle="bold" />
-
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/arm_joint_position_help_text"
-	        android:textSize="15dip" />
+	        android:textSize="15sp" />
 
 	    <ImageView
 	        android:layout_width="wrap_content"

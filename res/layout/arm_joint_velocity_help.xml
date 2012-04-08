@@ -17,14 +17,14 @@
 	        android:layout_height="wrap_content"
 	        android:paddingTop="5dip"
 	        android:text="@string/arm_joint_velocity"
-	        android:textSize="15dip"
+	        android:textSize="15sp"
 	        android:textStyle="bold" />
 
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/arm_joint_velocity_help_text"
-	        android:textSize="15dip" />
+	        android:textSize="15sp" />
 
 	    <ImageView
 	        android:layout_width="wrap_content"

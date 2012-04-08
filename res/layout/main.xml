@@ -18,7 +18,7 @@
 	    	android:layout_height="wrap_content"
 	    	android:text="@string/title"
 	    	android:padding ="10dip"
-	    	android:textSize = "25dip"
+	    	android:textSize = "25sp"
 	    	android:shadowColor = "#FF6600"
 	    	android:textColor="#FF6600"
 	    	android:gravity="center"/>
@@ -31,7 +31,7 @@
 	    	android:layout_width="140dip"
 	    	android:gravity="center_vertical"
 	    	android:paddingLeft = "20dip" 
-	    	android:textSize="15dip"/>
+	    	android:textSize="15sp"/>
 	    <LinearLayout android:layout_width="fill_parent"
 	    	android:layout_height="10dip"/>
 	    <Button	android:text="@string/arm_controller"
@@ -41,7 +41,7 @@
 	     	android:gravity="center_vertical"
 	    	android:paddingLeft = "20dip" 
 	    	android:textColor="#FFFFFF"
-	    	android:textSize="15dip" />
+	    	android:textSize="15sp" />
 	   	<LinearLayout android:layout_width="fill_parent"
 	    	android:layout_height="10dip"/>
 	   	<!--  
@@ -62,7 +62,17 @@
 	     	android:gravity="center_vertical"
 	    	android:paddingLeft = "20dip" 
 	    	android:textColor="#FFFFFF"
-	    	android:textSize="15dip" />
+	    	android:textSize="15sp" />
+	    <LinearLayout android:layout_width="fill_parent"
+	    	android:layout_height="10dip"/>
+   		<Button android:text="@string/maze"
+			android:id="@+id/maze_game"
+			android:layout_height="wrap_content"
+		   	android:layout_width="140dip"
+		  	android:gravity="center_vertical"
+		  	android:paddingLeft = "20dip" 
+		   	android:textColor="#FFFFFF"
+		   	android:textSize="15sp"/>
 	    <LinearLayout android:layout_width="fill_parent"
 	    	android:layout_height="10dip"/>
    		<Button android:text="@string/help"
@@ -72,7 +82,7 @@
 		  	android:gravity="center_vertical"
 		  	android:paddingLeft = "20dip" 
 		   	android:textColor="#FFFFFF"
-		   	android:textSize="15dip"/>
+		   	android:textSize="15sp"/>
 	    <LinearLayout android:layout_width="fill_parent"
 	    	android:layout_height="10dip"/>
    		<Button android:text="@string/quit"
@@ -82,7 +92,7 @@
 		  	android:gravity="center_vertical"
 		  	android:paddingLeft = "20dip" 
 		   	android:textColor="#FFFFFF"
-		   	android:textSize="15dip"/>
+		   	android:textSize="15sp"/>
 	</LinearLayout>
 	<LinearLayout android:layout_height="wrap_content"
 	    android:layout_width="wrap_content"
@@ -94,7 +104,7 @@
 	    	android:layout_gravity = "right"
 	    	android:paddingRight = "10dip"
 	    	android:text = "@string/copyright_text_portrait"
-	    	android:textSize = "10dip"
+	    	android:textSize = "10sp"
 	    	android:textStyle = "italic" 
 	    	android:gravity = "right" />		    
  		<ImageView android:layout_height = "wrap_content"

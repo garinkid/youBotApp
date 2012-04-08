@@ -9,7 +9,7 @@
 		android:layout_height="wrap_content"
 		android:layout_width="fill_parent"
 		android:padding="20dip"
-		android:textSize="15dip"/>
+		android:textSize="15sp"/>
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
@@ -25,7 +25,7 @@
 			android:layout_height= "wrap_content"/>
 	</LinearLayout>
 	<LinearLayout
-		android:layout_width="fill_parent"
+		android:layout_width="280dip"
 		android:layout_height="wrap_content"
 		android:orientation="vertical">
 		<RelativeLayout

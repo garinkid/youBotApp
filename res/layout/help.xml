@@ -14,36 +14,36 @@
 			android:layout_height="wrap_content"
 			android:text = "@string/about"
 			android:paddingTop = "5dip"
-			android:textSize="15dip"
+			android:textSize="15sp"
 			android:textStyle="bold"/>
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/help_text"
-			android:textSize="15dip"/>
+			android:textSize="15sp"/>
 		<TextView
 			android:layout_width ="wrap_content"
 			android:layout_height="wrap_content"
 			android:text = "@string/connection"
 			android:paddingTop = "10dip"
-			android:textSize="15dip"
+			android:textSize="15sp"
 			android:textStyle="bold"/>
 		<TextView
 			android:layout_width ="wrap_content"
 			android:layout_height="wrap_content"
 			android:text = "@string/help_connection_text"
-			android:textSize="15dip"/>
+			android:textSize="15sp"/>
 		<TextView
 			android:layout_width ="wrap_content"
 			android:layout_height="wrap_content"
 			android:text = "@string/controller"
 			android:paddingTop = "10dip"
-			android:textSize="15dip"
+			android:textSize="15sp"
 			android:textStyle="bold"/>
 		<TextView
 			android:layout_width ="wrap_content"
 			android:layout_height="wrap_content"
 			android:text = "@string/help_controller_text"
-			android:textSize="15dip"/>
+			android:textSize="15sp"/>
 	</LinearLayout>
 </ScrollView>

@@ -14,7 +14,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/arm_joint_position"
-		    android:textSize="20dip" />
+		    android:textSize="20sp" />
 		<ImageView
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
@@ -38,7 +38,7 @@
 			<TextView android:text="@string/joint_1"
 				android:gravity="left"
 				android:paddingTop="5dip"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_width = "wrap_content"
 				android:layout_height= "wrap_content"
 				android:layout_gravity = "center_vertical"/>
@@ -77,7 +77,7 @@
 			<TextView android:text="@string/joint_2"
 				android:gravity="left"
 				android:paddingTop="5dip"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_width = "wrap_content"
 				android:layout_height= "wrap_content"
 				android:layout_gravity = "center_vertical"/>
@@ -116,7 +116,7 @@
 			<TextView android:text="@string/joint_3"
 				android:gravity="left"
 				android:paddingTop="5dip"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_width = "wrap_content"
 				android:layout_height= "wrap_content"
 				android:layout_gravity = "center_vertical"/>
@@ -155,7 +155,7 @@
 			<TextView android:text="@string/joint_4"
 				android:gravity="left"
 				android:paddingTop="5dip"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_width = "wrap_content"
 				android:layout_height= "wrap_content"
 				android:layout_gravity = "center_vertical"/>
@@ -194,7 +194,7 @@
 			<TextView android:text="@string/joint_5"
 				android:gravity="left"
 				android:paddingTop="5dip"
-				android:textSize = "20dip"
+				android:textSize = "20sp"
 				android:layout_width = "wrap_content"
 				android:layout_height= "wrap_content"
 				android:layout_gravity = "center_vertical"/>
@@ -250,14 +250,14 @@
 			<Button
 	   			android:id="@+id/send_button"
 				android:text="@string/send"
-				android:textSize="15dip"
+				android:textSize="15sp"
 				android:layout_height="wrap_content"
 				android:layout_width="150dip"
 				android:layout_weight="1"/>
 			<Button
 				android:id="@+id/change_mode"
 				android:text="@string/controller_switch_mode"
-				android:textSize="15dip"
+				android:textSize="15sp"
 				android:layout_height="wrap_content"
 				android:layout_width="150dip"
 				android:layout_weight="1"/>

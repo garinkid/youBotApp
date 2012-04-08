@@ -15,5 +15,6 @@
 		<array name="arm_controller_type">
 		<item>@string/joint_velocity</item>
 		<item>@string/joint_position</item>
+		<item>@string/pose</item>
 	</array>
 </resources>

@@ -24,7 +24,7 @@
 			   	android:layout_width="140dip"
 			   	android:gravity="center_vertical"
 			  	android:paddingLeft = "20dip" 
-			   	android:textSize="15dip" />
+			   	android:textSize="15sp" />
     </LinearLayout>
     <LinearLayout android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -35,7 +35,7 @@
         android:text="@string/text_paired_devices"
         android:background="#666"
         android:textColor="#FFF"
-        android:textSize="15dip"
+        android:textSize="15sp"
         android:paddingLeft="20dp"    />   
     	<ListView android:id="@+id/paired_devices"
         android:layout_width="fill_parent"
@@ -48,7 +48,7 @@
         android:text="@string/text_new_devices"
         android:background="#666"
         android:textColor="#FFF"
-        android:textSize="15dip"
+        android:textSize="15sp"
         android:paddingLeft="20dp"/>
     	<ListView android:id="@+id/new_devices"
         android:layout_width="fill_parent"
