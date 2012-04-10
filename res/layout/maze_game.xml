@@ -3,10 +3,7 @@
 	android:layout_height="420dp"
 	android:orientation="vertical"
 	android:layout_gravity="center"
-	android:padding="20dip">
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:orientation="vertical">	
+	android:padding="20dip">	
 		<LinearLayout android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
@@ -19,95 +16,57 @@
 					android:text="@string/open"
 					android:textSize="12sp"
 					android:layout_height="wrap_content"
-					android:layout_width="90dip"/>
+					android:layout_width="100dip"/>
 			<Button	android:id="@+id/gripper_close"
 					android:text="@string/close"
 					android:textSize="12sp"
 					android:layout_height="wrap_content"
-					android:layout_width="90dip"/>
+					android:layout_width="100dip"/>
 		</LinearLayout>
+		
+		<View
+        android:layout_width="fill_parent"
+        android:layout_height="10dp">
+    	</View>
+		
+		<TextView android:layout_width="wrap_content"
+		    android:layout_height = "wrap_content"
+		    android:text="@string/game_sensitivity"
+		    android:textSize="15sp"/>
+		
+		<View android:layout_width="fill_parent"
+        	android:layout_height="10dp">
+    	</View>
+		
+		<SeekBar android:id="@+id/game_sensitivity_seekbar"
+		  android:layout_width="fill_parent"
+		  android:layout_height="wrap_content"
+		  android:paddingLeft="10dip"
+		  android:paddingRight="10dip"
+		  android:progressDrawable="@drawable/slider_main"
+		  android:thumb="@drawable/slider" />
+		
+		<View android:layout_width="fill_parent"
+        	android:layout_height="30dp">
+    	</View>
 		
 		<LinearLayout android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_gravity="center"
 		android:orientation="horizontal">
-			<TextView
-			    	android:text="@string/game_mode"
-			    	android:textSize="15sp"
-			    	android:layout_height="wrap_content"
-			    	android:layout_width="80dp" />
-			<CheckBox	android:id="@+id/accel_mode_checkbox"
-						android:text="@string/accel_mode"
-						android:textSize="15sp"
-						android:layout_height="wrap_content"
-						android:layout_width="90dip"/>
-			<CheckBox	android:id="@+id/cartesian_mode_checkbox"
-						android:text="@string/cartesian_mode"
-						android:textSize="15sp"
-						android:layout_height="wrap_content"
-						android:layout_width="110dip"/>
+		<Button	android:id="@+id/reset_position"
+			android:text="@string/reset_pose"
+			android:textSize="15sp"
+			android:layout_height="60dip"
+			android:layout_gravity="center"
+			android:layout_width="80dip"/>
+		<ToggleButton android:id = "@+id/game_status_toggle_button"
+		   	android:textOn = "@string/game_stop"
+		   	android:textOff = "@string/game_start"
+		   	android:layout_width = "140dip"
+		   	android:textSize="15sp"
+		   	android:layout_gravity="center"
+		   	android:layout_height = "60dip"/>
 		</LinearLayout>
 		
-	<LinearLayout
-	    android:layout_width="220dip"
-	    android:layout_height="220dip"
-	    android:layout_gravity="center" >
-		<RelativeLayout
-		    android:layout_width="fill_parent"
-		    android:layout_height="fill_parent"
-		    android:layout_gravity="center"
-		    android:padding="10dip"
-		    android:gravity="center" >
-			<SeekBar
-			  android:paddingLeft="50dip"
-			  android:paddingRight="10dip"
-			  android:id="@+id/slider_angular"
-			  android:layout_width="fill_parent"
-			  android:layout_height="wrap_content"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
-			<TextView android:text="@string/x"
-			  android:gravity="right"
-			  android:paddingRight="10dip"
-			  android:paddingTop="45dip"
-			  android:layout_width = "fill_parent"
-			  android:layout_height= "wrap_content"/> 
-			<RelativeLayout
-				android:layout_height="fill_parent"
-				android:paddingTop="50dip"
-				android:layout_width="wrap_content">
-				<com.rhama.youbot.VerticalSeekBar
-			 	android:progressDrawable="@drawable/slider_main_vertical"
-		      	android:layout_height="200dip"
-		      	android:layout_width="38dip"
-		      	android:id="@+id/slider_longitudinal" 
-		      	android:thumb="@drawable/slider_vertical" />  
-			</RelativeLayout>
-			<TextView android:text="@string/y"
-			  android:gravity="bottom"
-			  android:paddingLeft="45dip"
-			  android:layout_width = "fill_parent"
-			  android:layout_height= "fill_parent"/>
-			<RelativeLayout
-			    android:layout_width="fill_parent"
-			    android:layout_height="fill_parent"
-			    android:layout_centerInParent="true"
-			    android:paddingLeft="45dip"
-			    android:paddingTop="50dip" >
-					<FrameLayout
-						android:id="@+id/main_controller"
-						android:layout_width="200dip"
-						android:layout_height="200dip">
-					</FrameLayout>
-			</RelativeLayout> 
-		  </RelativeLayout> 
-	</LinearLayout>
-	
-	<Button	android:id="@+id/reset_position"
-			android:text="@string/set_position"
-			android:textSize="15sp"
-			android:layout_height="wrap_content"
-			android:layout_width="140dip"
-			android:layout_gravity="center_horizontal"/>
-		
-	</LinearLayout>
 </LinearLayout>

@@ -55,13 +55,11 @@ public final class R {
     public static final class id {
         public static final int accel_animation=0x7f07001d;
         public static final int accel_button=0x7f07001f;
-        public static final int accel_mode_checkbox=0x7f070037;
         public static final int arm_candle=0x7f07001b;
         public static final int arm_folded=0x7f07001a;
         public static final int backward=0x7f070029;
         public static final int base_movement_text=0x7f07001c;
         public static final int bluetooth_button=0x7f07002b;
-        public static final int cartesian_mode_checkbox=0x7f070038;
         public static final int change_mode=0x7f070013;
         public static final int connect_button=0x7f070022;
         public static final int controller_button=0x7f070032;
@@ -71,6 +69,8 @@ public final class R {
         public static final int entry_joint_4=0x7f07000a;
         public static final int entry_joint_5=0x7f07000d;
         public static final int forward=0x7f070026;
+        public static final int game_sensitivity_seekbar=0x7f070037;
+        public static final int game_status_toggle_button=0x7f070039;
         public static final int gripper_close=0x7f070036;
         public static final int gripper_open=0x7f070035;
         public static final int help_button=0x7f070000;
@@ -94,7 +94,7 @@ public final class R {
         public static final int quit_button=0x7f070034;
         public static final int radio_degree=0x7f070010;
         public static final int radio_radian=0x7f070011;
-        public static final int reset_position=0x7f070039;
+        public static final int reset_position=0x7f070038;
         public static final int return_main_menu=0x7f070021;
         public static final int right_button=0x7f070028;
         public static final int select_device_button=0x7f070030;
@@ -173,9 +173,9 @@ public final class R {
         public static final int copyright_text_portrait=0x7f060006;
         public static final int degree=0x7f060042;
         public static final int forward=0x7f06001d;
-        public static final int game_mode=0x7f060052;
-        public static final int game_off=0x7f06004d;
-        public static final int game_on=0x7f06004e;
+        public static final int game_sensitivity=0x7f060052;
+        public static final int game_start=0x7f06004d;
+        public static final int game_stop=0x7f06004e;
         public static final int gripper=0x7f060051;
         public static final int help=0x7f060000;
         public static final int help_connection_text=0x7f060003;
@@ -213,13 +213,13 @@ public final class R {
         /**  arm joint position 
          */
         public static final int radian=0x7f060041;
+        public static final int reset_pose=0x7f060050;
         public static final int right=0x7f06001f;
         public static final int scan_devices=0x7f06002f;
         public static final int scanning_devices=0x7f060030;
         public static final int select_controller_mode=0x7f06000f;
         public static final int select_device=0x7f06000d;
         public static final int send=0x7f060043;
-        public static final int set_position=0x7f060050;
         /**  Motion Profile 
          */
         public static final int start=0x7f06003e;

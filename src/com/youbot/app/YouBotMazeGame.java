@@ -19,7 +19,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.ToggleButton;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class YouBotMazeGame extends Activity{
 	
@@ -41,8 +43,12 @@ public class YouBotMazeGame extends Activity{
 	private SensorManager sensorManager = null;
 	private Sensor orientSensor;
 	private int i;
+	int maxSeekBar = 50;
+	int middleOffset = maxSeekBar / 2 ;
+	double gameSensitivity;
 	
-	private CheckBox accelCheckBox, cartesianCheckBox;
+	private ToggleButton gameStatusToggleButton;
+	private SeekBar gameSensitivitySeekBar;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -72,15 +78,19 @@ public class YouBotMazeGame extends Activity{
 		setPositionButton = (Button)this.findViewById(R.id.reset_position);
 		setPositionButton.setOnClickListener(onClickListener);
 
-		
-		accelCheckBox = (CheckBox)this.findViewById(R.id.accel_mode_checkbox);
-		accelCheckBox.setOnClickListener(onClickListener);
-		cartesianCheckBox = (CheckBox)this.findViewById(R.id.cartesian_mode_checkbox);
-		cartesianCheckBox.setOnClickListener(onClickListener);
+		gameStatusToggleButton = (ToggleButton)this.findViewById(R.id.game_status_toggle_button);
+		gameStatusToggleButton.setOnClickListener(onClickListener);
 		
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 		orientSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
-		sensorManager.registerListener(sensorEventListener, orientSensor, SensorManager.SENSOR_DELAY_UI);
+		sensorManager.registerListener(sensorEventListener, orientSensor, SensorManager.SENSOR_DELAY_FASTEST);
+		
+		gameSensitivitySeekBar = (SeekBar)findViewById(R.id.game_sensitivity_seekbar);
+		gameSensitivitySeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+		gameSensitivitySeekBar.setMax(maxSeekBar);
+		gameSensitivitySeekBar.setProgress(middleOffset);
+		
+		
 		
 	}
 	
@@ -123,16 +133,40 @@ public class YouBotMazeGame extends Activity{
 		super.onDestroy();
 	}
 	
+	private OnSeekBarChangeListener onSeekBarChangeListener = new OnSeekBarChangeListener(){
+
+		public void onProgressChanged(SeekBar seekBar, int progress,
+				boolean fromUser) {
+				switch(seekBar.getId()){
+				case R.id.game_sensitivity_seekbar:
+					gameSensitivity = ((progress) * (1.0 / maxSeekBar)) + 0.5;
+					break;
+				}
+			
+		}
+
+		public void onStartTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void onStopTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}
+
+	};
+	
 	private SensorEventListener sensorEventListener = new SensorEventListener(){
 		public void onSensorChanged(SensorEvent sensorEvent){
 			thetaY = sensorEvent.values[1];
 			thetaX = sensorEvent.values[2];
 			float deltaThetaX, deltaThetaY;
 			
-			if (accelCheckBox.isChecked()){
+			if (gameStatusToggleButton.isChecked()){
 				deltaThetaX = fixedThetaX - thetaX;
 				deltaThetaY = fixedThetaY - thetaY ;
-				sendCommand("maze," + deltaThetaX + "," + deltaThetaY);
+				sendCommand("maze," + deltaThetaX + "," + deltaThetaY + "," + gameSensitivity);
 			}
 			
 			
@@ -154,16 +188,10 @@ public class YouBotMazeGame extends Activity{
 			case R.id.reset_position:
 				sendCommand("arm_joint_position, " + default_pose[0] + ", "  + default_pose[1] + ", "  + default_pose[2] + ", "  + default_pose[3] + ", "  + default_pose[4]);
 				break;
-			case R.id.accel_mode_checkbox:
-				if (accelCheckBox.isChecked()){
+			case R.id.game_status_toggle_button:
+				if (gameStatusToggleButton.isChecked()){
 					fixedThetaX = thetaX;
 					fixedThetaY = thetaY;
-					cartesianCheckBox.setChecked(false);
-				}
-				break;
-			case R.id.cartesian_mode_checkbox:
-				if (cartesianCheckBox.isChecked()){
-					accelCheckBox.setChecked(false);
 				}
 				break;
 			}

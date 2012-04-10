@@ -136,14 +136,14 @@
 	    
 	 <!-- maze game -->
 	 <string name="maze">Maze Game</string>
-	 <string name="game_off">Accel not active</string>
-	 <string name="game_on">Accel Active</string>
+	 <string name="game_start">Start Game</string>
+	 <string name="game_stop">Stop Game</string>
 	 <string name="play">Play</string>
-	 <string name="set_position">Reset position</string>
-	 <string name="gripper">Gripper :</string>
+	 <string name="reset_pose">Reset Pose</string>
+	 <string name="gripper">Gripper:</string>
 	 
-	 <string name="game_mode">Mode :</string>
-	 <string name="cartesian_mode">Cartesian</string>
+	 <string name="game_sensitivity">Game Sensitivity:</string>
+	 <string name="cartesian_mode">Ctartesian</string>
 	 <string name="accel_mode">Accel</string>
 	 
 	 <string name="x">X</string>
