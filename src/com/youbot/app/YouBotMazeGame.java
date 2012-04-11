@@ -50,6 +50,8 @@ public class YouBotMazeGame extends Activity{
 	private ToggleButton gameStatusToggleButton;
 	private SeekBar gameSensitivitySeekBar;
 	
+	private Boolean gameStatus = false;
+	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maze_game);
@@ -163,7 +165,7 @@ public class YouBotMazeGame extends Activity{
 			thetaX = sensorEvent.values[2];
 			float deltaThetaX, deltaThetaY;
 			
-			if (gameStatusToggleButton.isChecked()){
+			if (gameStatus){
 				deltaThetaX = fixedThetaX - thetaX;
 				deltaThetaY = fixedThetaY - thetaY ;
 				sendCommand("maze," + deltaThetaX + "," + deltaThetaY + "," + gameSensitivity);
@@ -192,6 +194,11 @@ public class YouBotMazeGame extends Activity{
 				if (gameStatusToggleButton.isChecked()){
 					fixedThetaX = thetaX;
 					fixedThetaY = thetaY;
+					sendCommand("maze, 1.0");
+					gameStatus = true;
+				}else{
+					gameStatus = false;
+					sendCommand("maze, 0.0");
 				}
 				break;
 			}
