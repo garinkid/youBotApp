@@ -43,9 +43,11 @@ public class ArmPose extends Activity {
 			setTitle("No device selected");
 		}
 		
-		poseButtons = new Button[2];
-		poseButtons[0] = (Button)findViewById(R.id.arm_folded);
-		poseButtons[1] = (Button)findViewById(R.id.arm_candle);
+		poseButtons = new Button[4];
+		poseButtons[0] = (Button)findViewById(R.id.arm_maze_pose_button);
+		poseButtons[1] = (Button)findViewById(R.id.arm_candle_pose_button);
+		poseButtons[2] = (Button)findViewById(R.id.arm_pick_up_pose_button);
+		poseButtons[3] = (Button)findViewById(R.id.arm_folded_pose_button);
 		
 		for(i=0; i<poseButtons.length; i++){
 			poseButtons[i].setOnClickListener(onClickListener);
@@ -83,13 +85,21 @@ public class ArmPose extends Activity {
 	private OnClickListener onClickListener = new OnClickListener(){
 		public void onClick(View view){
 			switch(view.getId()){
-			case R.id.arm_folded:
-				sendCommand("arm_joint_position, 169.0, 90.0, 146.0, 102.5, 165.0" );
+			case R.id.arm_maze_pose_button:
+				sendCommand("arm_joint_position, -1.78343949044586, -32.5484076433121, 71.4216560509554, 40.0929936305732, -4.45987261146496" );
 				break;
-			case R.id.arm_candle:
-				sendCommand("arm_joint_position, 0.0, 0.0, 0.0, 0.0, 0.0" );
+			case R.id.arm_candle_pose_button:
+				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -4.53949044585988,	-13.8783439490446, -5.29108280254778" );
+				break;
+			case R.id.arm_pick_up_pose_button:
+				sendCommand("arm_joint_position, 0.0, -35, -34, -82.5, -5" );
+				break;
+			case R.id.arm_folded_pose_button:
+				sendCommand("arm_joint_position, -169, -65, 146, -102.5, -165" );
 				break;
 			}
+			
+
 			
 		}
 	};

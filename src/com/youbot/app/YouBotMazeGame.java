@@ -36,6 +36,7 @@ public class YouBotMazeGame extends Activity{
 	private BluetoothDevice youBot = null;
 	
 	private float[] default_pose = {(float)2.9172909934892601, (float)0.56619152215177582, (float)-1.231205868905108, (float)2.5834732319552178, (float)2.9052652400289047};
+	//private float[] default_pose = { (float)2.9172909934892601, (float)0.54797632628528892, (float)-1.6732750791549957, (float)3.0242696547025631, (float)2.9052873639208312};
 	private float[] offset = {(float)169, (float)65, (float)-142, (float)108, (float)171};
 	
 	private float fixedThetaX, fixedThetaY, thetaX, thetaY;

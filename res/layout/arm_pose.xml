@@ -18,6 +18,7 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
 	        android:paddingLeft="150dip"
+	        android:visibility="gone"
 	        android:scaleType="fitStart"
 	        android:src="@drawable/help00" 
 	        android:id= "@+id/help_button" />
@@ -28,21 +29,40 @@
 		android:paddingBottom="10dip"/>
 	
 	<Button 
-	    	android:id = "@+id/arm_folded"
-	    	android:text = "@string/arm_folded_pose"
+	    	android:id = "@+id/arm_maze_pose_button"
+	    	android:text = "@string/arm_maze_pose"
 	    	android:layout_width = "150dip"
-	    	android:visibility = "gone"
 	    	android:layout_height = "wrap_content"
 	    	android:textSize = "20sp"/>
 	
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="10dip"
-		android:paddingBottom="10dip"/>
+	<View android:layout_width="fill_parent"
+		android:layout_height="10dip"/>
 	
 	<Button 
-	    	android:id = "@+id/arm_candle"
+	    	android:id = "@+id/arm_candle_pose_button"
 	    	android:text = "@string/arm_candle_pose"
 	    	android:layout_width = "150dip"
 	    	android:layout_height = "wrap_content"
 	    	android:textSize = "20sp"/>
+	
+	<View android:layout_width="fill_parent"
+		android:layout_height="10dip"/>
+	
+	<Button 
+	    	android:id = "@+id/arm_pick_up_pose_button"
+	    	android:text = "@string/arm_pick_up_pose"
+	    	android:layout_width = "150dip"
+	    	android:layout_height = "wrap_content"
+	    	android:textSize = "20sp"/>
+	
+	<View android:layout_width="fill_parent"
+		android:layout_height="10dip"/>
+	
+	<Button 
+	    	android:id = "@+id/arm_folded_pose_button"
+	    	android:text = "@string/arm_folded_pose"
+	    	android:layout_width = "150dip"
+	    	android:layout_height = "wrap_content"
+	    	android:textSize = "20sp"/>
+	
 </LinearLayout>

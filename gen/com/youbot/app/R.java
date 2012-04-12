@@ -53,66 +53,68 @@ public final class R {
         public static final int white_background=0x7f02001c;
     }
     public static final class id {
-        public static final int accel_animation=0x7f07001d;
-        public static final int accel_button=0x7f07001f;
-        public static final int arm_candle=0x7f07001b;
-        public static final int arm_folded=0x7f07001a;
-        public static final int backward=0x7f070029;
-        public static final int base_movement_text=0x7f07001c;
-        public static final int bluetooth_button=0x7f07002b;
+        public static final int accel_animation=0x7f07001f;
+        public static final int accel_button=0x7f070021;
+        public static final int arm_candle_pose_button=0x7f07001b;
+        public static final int arm_folded_pose_button=0x7f07001d;
+        public static final int arm_maze_pose_button=0x7f07001a;
+        public static final int arm_pick_up_pose_button=0x7f07001c;
+        public static final int backward=0x7f07002b;
+        public static final int base_movement_text=0x7f07001e;
+        public static final int bluetooth_button=0x7f07002d;
         public static final int change_mode=0x7f070013;
-        public static final int connect_button=0x7f070022;
-        public static final int controller_button=0x7f070032;
+        public static final int connect_button=0x7f070024;
+        public static final int controller_button=0x7f070034;
         public static final int entry_joint_1=0x7f070001;
         public static final int entry_joint_2=0x7f070004;
         public static final int entry_joint_3=0x7f070007;
         public static final int entry_joint_4=0x7f07000a;
         public static final int entry_joint_5=0x7f07000d;
-        public static final int forward=0x7f070026;
-        public static final int game_sensitivity_seekbar=0x7f070037;
-        public static final int game_status_toggle_button=0x7f070039;
-        public static final int gripper_close=0x7f070036;
-        public static final int gripper_open=0x7f070035;
+        public static final int forward=0x7f070028;
+        public static final int game_sensitivity_seekbar=0x7f070039;
+        public static final int game_status_toggle_button=0x7f07003b;
+        public static final int gripper_close=0x7f070038;
+        public static final int gripper_open=0x7f070037;
         public static final int help_button=0x7f070000;
-        public static final int left_button=0x7f070027;
-        public static final int main_controller=0x7f070025;
-        public static final int manipulator_button=0x7f070031;
-        public static final int maze_game=0x7f070033;
+        public static final int left_button=0x7f070029;
+        public static final int main_controller=0x7f070027;
+        public static final int manipulator_button=0x7f070033;
+        public static final int maze_game=0x7f070035;
         public static final int minus_joint_1=0x7f070002;
         public static final int minus_joint_2=0x7f070005;
         public static final int minus_joint_3=0x7f070008;
         public static final int minus_joint_4=0x7f07000b;
         public static final int minus_joint_5=0x7f07000e;
-        public static final int move_button=0x7f07003b;
-        public static final int new_devices=0x7f07002f;
-        public static final int paired_devices=0x7f07002d;
+        public static final int move_button=0x7f07003d;
+        public static final int new_devices=0x7f070031;
+        public static final int paired_devices=0x7f07002f;
         public static final int plus_joint_1=0x7f070003;
         public static final int plus_joint_2=0x7f070006;
         public static final int plus_joint_3=0x7f070009;
         public static final int plus_joint_4=0x7f07000c;
         public static final int plus_joint_5=0x7f07000f;
-        public static final int quit_button=0x7f070034;
+        public static final int quit_button=0x7f070036;
         public static final int radio_degree=0x7f070010;
         public static final int radio_radian=0x7f070011;
-        public static final int reset_position=0x7f070038;
-        public static final int return_main_menu=0x7f070021;
-        public static final int right_button=0x7f070028;
-        public static final int select_device_button=0x7f070030;
+        public static final int reset_position=0x7f07003a;
+        public static final int return_main_menu=0x7f070023;
+        public static final int right_button=0x7f07002a;
+        public static final int select_device_button=0x7f070032;
         public static final int send_button=0x7f070012;
-        public static final int slider_angular=0x7f07001e;
+        public static final int slider_angular=0x7f070020;
         public static final int slider_joint_1=0x7f070014;
         public static final int slider_joint_2=0x7f070015;
         public static final int slider_joint_3=0x7f070016;
         public static final int slider_joint_4=0x7f070017;
         public static final int slider_joint_5=0x7f070018;
-        public static final int slider_longitudinal=0x7f070024;
-        public static final int slider_transversal=0x7f07002a;
-        public static final int start_button=0x7f07003a;
-        public static final int stop_base_button=0x7f070020;
+        public static final int slider_longitudinal=0x7f070026;
+        public static final int slider_transversal=0x7f07002c;
+        public static final int start_button=0x7f07003c;
+        public static final int stop_base_button=0x7f070022;
         public static final int stop_button=0x7f070019;
-        public static final int switch_controller=0x7f070023;
-        public static final int title_new_devices=0x7f07002e;
-        public static final int title_paired_devices=0x7f07002c;
+        public static final int switch_controller=0x7f070025;
+        public static final int title_new_devices=0x7f070030;
+        public static final int title_paired_devices=0x7f07002e;
     }
     public static final class layout {
         public static final int arm_joint_position=0x7f030000;
@@ -136,7 +138,7 @@ public final class R {
         public static final int CCW=0x7f060021;
         public static final int CW=0x7f060022;
         public static final int about=0x7f060007;
-        public static final int accel_mode=0x7f060054;
+        public static final int accel_mode=0x7f060056;
         public static final int angular=0x7f06001c;
         public static final int app_name=0x7f06000c;
         public static final int arm_candle_pose=0x7f060049;
@@ -145,16 +147,18 @@ public final class R {
          */
         public static final int arm_folded_pose=0x7f060047;
         public static final int arm_joint_position=0x7f060044;
-        public static final int arm_joint_position_help_text=0x7f06004a;
+        public static final int arm_joint_position_help_text=0x7f06004c;
         public static final int arm_joint_velocity=0x7f060045;
-        public static final int arm_joint_velocity_help_text=0x7f06004b;
+        public static final int arm_joint_velocity_help_text=0x7f06004d;
+        public static final int arm_maze_pose=0x7f06004a;
+        public static final int arm_pick_up_pose=0x7f06004b;
         public static final int arm_pose=0x7f060048;
         public static final int available_devices=0x7f060031;
         public static final int backward=0x7f060020;
         public static final int base_controller=0x7f060010;
         public static final int base_movement=0x7f06000a;
         public static final int bluetooth_note=0x7f06002a;
-        public static final int cartesian_mode=0x7f060053;
+        public static final int cartesian_mode=0x7f060055;
         public static final int close=0x7f060026;
         public static final int connect=0x7f060027;
         public static final int connect_bluetooth=0x7f060029;
@@ -173,16 +177,16 @@ public final class R {
         public static final int copyright_text_portrait=0x7f060006;
         public static final int degree=0x7f060042;
         public static final int forward=0x7f06001d;
-        public static final int game_sensitivity=0x7f060052;
-        public static final int game_start=0x7f06004d;
-        public static final int game_stop=0x7f06004e;
-        public static final int gripper=0x7f060051;
+        public static final int game_sensitivity=0x7f060054;
+        public static final int game_start=0x7f06004f;
+        public static final int game_stop=0x7f060050;
+        public static final int gripper=0x7f060053;
         public static final int help=0x7f060000;
         public static final int help_connection_text=0x7f060003;
         public static final int help_controller_text=0x7f060004;
         public static final int help_text=0x7f060002;
         public static final int help_title=0x7f060001;
-        public static final int invert=0x7f060057;
+        public static final int invert=0x7f060059;
         /**  Manipulator Mode 
          */
         public static final int joint_1=0x7f060038;
@@ -199,7 +203,7 @@ public final class R {
         public static final int manipulator=0x7f06000b;
         /**  maze game 
          */
-        public static final int maze=0x7f06004c;
+        public static final int maze=0x7f06004e;
         public static final int motion_profile=0x7f060040;
         public static final int move=0x7f06003f;
         public static final int no_found_device=0x7f060032;
@@ -207,13 +211,13 @@ public final class R {
         public static final int off=0x7f060024;
         public static final int on=0x7f060023;
         public static final int open=0x7f060025;
-        public static final int play=0x7f06004f;
+        public static final int play=0x7f060051;
         public static final int pose=0x7f060016;
         public static final int quit=0x7f060012;
         /**  arm joint position 
          */
         public static final int radian=0x7f060041;
-        public static final int reset_pose=0x7f060050;
+        public static final int reset_pose=0x7f060052;
         public static final int right=0x7f06001f;
         public static final int scan_devices=0x7f06002f;
         public static final int scanning_devices=0x7f060030;
@@ -231,8 +235,8 @@ public final class R {
         public static final int title=0x7f060008;
         public static final int transversal=0x7f06001b;
         public static final int velocity=0x7f060018;
-        public static final int x=0x7f060055;
-        public static final int y=0x7f060056;
+        public static final int x=0x7f060057;
+        public static final int y=0x7f060058;
     }
     public static final class styleable {
         /** Attributes that can be used with a ProgressBar.

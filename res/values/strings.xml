@@ -119,7 +119,8 @@
 	<string name="arm_folded_pose">Folded</string>
 	<string name="arm_pose">Arm Pose</string>
 	<string name="arm_candle_pose">Candle</string>
-	
+	<string name="arm_maze_pose">Maze</string>
+	<string name="arm_pick_up_pose">Pick Up</string>
 	
 	<string name="arm_joint_position_help_text">
 	    Arm joint position allows user to move youBot arm into a pose that are define through its joint angles (in radian or degree).
