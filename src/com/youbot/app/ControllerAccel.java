@@ -56,6 +56,7 @@ import android.hardware.*;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.*;
 import android.util.Log;
 import android.widget.Button;
@@ -87,13 +88,17 @@ public class ControllerAccel extends Activity{
 	private BaseMovement youBotBaseMovement = new BaseMovement();
 	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
+	private int naturalOrientation;
+	private Configuration config;
 	SeekBar angularSeekBar;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		if (D) Log.d(TAG, "onCreate");
 		setContentView(R.layout.controller_accel);
-				
+		
+		config =  getResources().getConfiguration();
+		naturalOrientation = config.orientation;
 		//toggle button
 		accelButton = (ToggleButton)findViewById(R.id.accel_button);
 		accelButton.setOnClickListener(onClickListener);
@@ -166,9 +171,18 @@ public class ControllerAccel extends Activity{
 	SensorEventListener sensorEventListener = new SensorEventListener(){
 		public void onSensorChanged(SensorEvent sensorEvent){
 			if(sensorEvent.sensor.getType() == Sensor.TYPE_ORIENTATION){
-				pitch = sensorEvent.values[1];
-				roll = sensorEvent.values[2];
+				switch(naturalOrientation){
+				case Configuration.ORIENTATION_PORTRAIT:
+					pitch = sensorEvent.values[1];
+					roll = sensorEvent.values[2];
+					break;
+				case Configuration.ORIENTATION_LANDSCAPE:
+					pitch = - sensorEvent.values[1];
+					roll = - sensorEvent.values[2];
+					break;
 				
+				
+				}
 				if (accelButton.isChecked() == true ){
 					float deltaRoll, deltaPitch;
 					deltaRoll = roll - fixedRoll;

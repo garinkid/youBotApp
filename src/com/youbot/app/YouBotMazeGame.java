@@ -6,6 +6,7 @@ import com.youbot.app.R;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.res.Configuration;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,8 +15,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -43,7 +47,9 @@ public class YouBotMazeGame extends Activity{
 	
 	private SensorManager sensorManager = null;
 	private Sensor orientSensor;
-	private int i;
+	private int i, naturalOrientation;
+	private Configuration config;
+	
 	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
 	double gameSensitivity;
@@ -57,6 +63,9 @@ public class YouBotMazeGame extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.maze_game);
 		setTitle("youBot Maze Game");
+		
+		config =  getResources().getConfiguration();
+		naturalOrientation = config.orientation;
 		
 		// get MAC address
 		Bundle controllerSimple = getIntent().getExtras();
@@ -162,10 +171,18 @@ public class YouBotMazeGame extends Activity{
 	
 	private SensorEventListener sensorEventListener = new SensorEventListener(){
 		public void onSensorChanged(SensorEvent sensorEvent){
-			thetaY = sensorEvent.values[1];
-			thetaX = sensorEvent.values[2];
+			switch(naturalOrientation){
+				case Configuration.ORIENTATION_PORTRAIT:
+					thetaX = sensorEvent.values[2];
+					thetaY = sensorEvent.values[1];
+					break;
+				case Configuration.ORIENTATION_LANDSCAPE:
+					thetaX = -sensorEvent.values[2];
+					thetaY = -sensorEvent.values[1];
+					break;
+			}
+
 			float deltaThetaX, deltaThetaY;
-			
 			if (gameStatus){
 				deltaThetaX = fixedThetaX - thetaX;
 				deltaThetaY = fixedThetaY - thetaY ;

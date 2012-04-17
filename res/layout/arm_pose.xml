@@ -25,44 +25,122 @@
 	</LinearLayout>
 	
 	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="10dip"
-		android:paddingBottom="10dip"/>
+	    android:layout_height="wrap_content"
+		android:paddingTop = "10dip"
+		android:orientation = "horizontal">
+		<Button 
+		    	android:id = "@+id/arm_pick_up_front_pose_button"
+		    	android:text = "@string/arm_pick_up_front_pose"
+		    	android:layout_width = "130dip"
+		    	android:layout_height = "wrap_content"
+		    	android:textSize = "15sp"/>
+		<View android:layout_height="fill_parent" 
+		    android:layout_width="10dip"/>
+		<Button 
+		    	android:id = "@+id/arm_maze_pose_button"
+		    	android:text = "@string/arm_maze_pose"
+		    	android:layout_width = "130dip"
+		    	android:layout_height = "wrap_content"
+		    	android:textSize = "15sp"/>
+	</LinearLayout>
 	
+	
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:paddingTop = "10dip"
+		android:orientation = "horizontal">
+			<Button 
+			    	android:id = "@+id/arm_pick_up_left_pose_button"
+			    	android:text = "@string/arm_pick_up_left_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+			<View android:layout_height="fill_parent" 
+			    android:layout_width="10dip"/>
+			<Button 
+			    	android:id = "@+id/arm_folded_pose_button"
+			    	android:text = "@string/arm_folded_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+	</LinearLayout>
+	
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:paddingTop = "10dip"
+		android:orientation = "horizontal">
+			<Button 
+			    	android:id = "@+id/arm_pick_up_right_pose_button"
+			    	android:text = "@string/arm_pick_up_right_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+			<View android:layout_height="fill_parent" 
+			    android:layout_width="10dip"/>
+			<Button 
+			    	android:id = "@+id/arm_zigzag_up_pose_button"
+			    	android:text = "@string/arm_zigzag_up_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+	</LinearLayout>
+	
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:paddingTop = "10dip"
+		android:orientation = "horizontal">
+			<Button 
+			    	android:id = "@+id/arm_pick_up_plate_pose_button"
+			    	android:text = "@string/arm_pick_up_plate_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+			<View android:layout_height="fill_parent" 
+			    android:layout_width="10dip"/>
+			<Button 
+			    	android:id = "@+id/arm_zigzag_forward_pose_button"
+			    	android:text = "@string/arm_zigzag_forward_pose"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+	</LinearLayout>
+	
+	<View android:layout_height="10dip" 
+		  android:layout_width="fill_parent"/>
 	<Button 
-	    	android:id = "@+id/arm_maze_pose_button"
-	    	android:text = "@string/arm_maze_pose"
-	    	android:layout_width = "150dip"
-	    	android:layout_height = "wrap_content"
-	    	android:textSize = "20sp"/>
+		android:id = "@+id/arm_candle_pose_button"
+    	android:text = "@string/arm_candle_pose"
+    	android:layout_width = "130dip"
+    	android:layout_height = "wrap_content"
+	   	android:textSize = "15sp"/>
 	
-	<View android:layout_width="fill_parent"
-		android:layout_height="10dip"/>
+	<View android:layout_height="10dip" 
+		  android:layout_width="fill_parent"/>
 	
-	<Button 
-	    	android:id = "@+id/arm_candle_pose_button"
-	    	android:text = "@string/arm_candle_pose"
-	    	android:layout_width = "150dip"
-	    	android:layout_height = "wrap_content"
-	    	android:textSize = "20sp"/>
+	<TextView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/gripper"
+		    android:textSize="20sp" />
 	
-	<View android:layout_width="fill_parent"
-		android:layout_height="10dip"/>
-	
-	<Button 
-	    	android:id = "@+id/arm_pick_up_pose_button"
-	    	android:text = "@string/arm_pick_up_pose"
-	    	android:layout_width = "150dip"
-	    	android:layout_height = "wrap_content"
-	    	android:textSize = "20sp"/>
-	
-	<View android:layout_width="fill_parent"
-		android:layout_height="10dip"/>
-	
-	<Button 
-	    	android:id = "@+id/arm_folded_pose_button"
-	    	android:text = "@string/arm_folded_pose"
-	    	android:layout_width = "150dip"
-	    	android:layout_height = "wrap_content"
-	    	android:textSize = "20sp"/>
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:paddingTop = "10dip"
+		android:orientation = "horizontal">
+			<Button 
+			    	android:id = "@+id/gripper_open_button"
+			    	android:text = "@string/open"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+			<View android:layout_height="fill_parent" 
+			    android:layout_width="10dip"/>
+			<Button 
+			    	android:id = "@+id/gripper_close_button"
+			    	android:text = "@string/close"
+			    	android:layout_width = "130dip"
+			    	android:layout_height = "wrap_content"
+			    	android:textSize = "15sp"/>
+	</LinearLayout>
 	
 </LinearLayout>
