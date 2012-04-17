@@ -177,8 +177,8 @@ public class YouBotMazeGame extends Activity{
 					thetaY = sensorEvent.values[1];
 					break;
 				case Configuration.ORIENTATION_LANDSCAPE:
-					thetaX = -sensorEvent.values[2];
-					thetaY = -sensorEvent.values[1];
+					thetaX = -sensorEvent.values[1];
+					thetaY = -sensorEvent.values[2];
 					break;
 			}
 

@@ -177,8 +177,8 @@ public class ControllerAccel extends Activity{
 					roll = sensorEvent.values[2];
 					break;
 				case Configuration.ORIENTATION_LANDSCAPE:
-					pitch = - sensorEvent.values[1];
-					roll = - sensorEvent.values[2];
+					pitch = - sensorEvent.values[2];
+					roll = - sensorEvent.values[1];
 					break;
 				
 				
