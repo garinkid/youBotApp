@@ -48,7 +48,8 @@ public class YouBotMazeGame extends Activity{
 	private SensorManager sensorManager = null;
 	private Sensor orientSensor;
 	private int i, naturalOrientation;
-	private Configuration config;
+    private WindowManager windowManager;
+    private Display display; 
 	
 	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
@@ -64,8 +65,9 @@ public class YouBotMazeGame extends Activity{
 		setContentView(R.layout.maze_game);
 		setTitle("youBot Maze Game");
 		
-		config =  getResources().getConfiguration();
-		naturalOrientation = config.orientation;
+		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        display = windowManager.getDefaultDisplay();
+		naturalOrientation = display.getRotation();
 		
 		// get MAC address
 		Bundle controllerSimple = getIntent().getExtras();
@@ -172,14 +174,26 @@ public class YouBotMazeGame extends Activity{
 	private SensorEventListener sensorEventListener = new SensorEventListener(){
 		public void onSensorChanged(SensorEvent sensorEvent){
 			switch(naturalOrientation){
-				case Configuration.ORIENTATION_PORTRAIT:
-					thetaX = sensorEvent.values[2];
-					thetaY = sensorEvent.values[1];
-					break;
-				case Configuration.ORIENTATION_LANDSCAPE:
-					thetaX = -sensorEvent.values[1];
-					thetaY = -sensorEvent.values[2];
-					break;
+			//default 
+			case Surface.ROTATION_0:
+				thetaY = sensorEvent.values[1];
+				thetaX = sensorEvent.values[2];
+				break;
+			// tablet
+			case Surface.ROTATION_90:
+				thetaY = - sensorEvent.values[2];
+				thetaX = sensorEvent.values[1];
+				break;
+			// others
+			case Surface.ROTATION_180:
+				thetaY = - sensorEvent.values[1];
+				thetaX = - sensorEvent.values[2];
+				break;
+			// others
+			case Surface.ROTATION_270:
+				thetaY = sensorEvent.values[2];
+				thetaX = - sensorEvent.values[1];
+				break;
 			}
 
 			float deltaThetaX, deltaThetaY;

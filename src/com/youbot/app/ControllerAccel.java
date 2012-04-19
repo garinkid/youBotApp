@@ -63,8 +63,11 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.*;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -88,8 +91,9 @@ public class ControllerAccel extends Activity{
 	private BaseMovement youBotBaseMovement = new BaseMovement();
 	int maxSeekBar = 50;
 	int middleOffset = maxSeekBar / 2 ;
+    private WindowManager windowManager;
+    private Display display; 
 	private int naturalOrientation;
-	private Configuration config;
 	SeekBar angularSeekBar;
 	
 	public void onCreate(Bundle savedInstanceState){
@@ -97,8 +101,9 @@ public class ControllerAccel extends Activity{
 		if (D) Log.d(TAG, "onCreate");
 		setContentView(R.layout.controller_accel);
 		
-		config =  getResources().getConfiguration();
-		naturalOrientation = config.orientation;
+		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        display = windowManager.getDefaultDisplay();
+		naturalOrientation = display.getRotation();
 		//toggle button
 		accelButton = (ToggleButton)findViewById(R.id.accel_button);
 		accelButton.setOnClickListener(onClickListener);
@@ -172,16 +177,26 @@ public class ControllerAccel extends Activity{
 		public void onSensorChanged(SensorEvent sensorEvent){
 			if(sensorEvent.sensor.getType() == Sensor.TYPE_ORIENTATION){
 				switch(naturalOrientation){
-				case Configuration.ORIENTATION_PORTRAIT:
+				//default 
+				case Surface.ROTATION_0:
 					pitch = sensorEvent.values[1];
 					roll = sensorEvent.values[2];
 					break;
-				case Configuration.ORIENTATION_LANDSCAPE:
+				// tablet
+				case Surface.ROTATION_90:
 					pitch = - sensorEvent.values[2];
+					roll = sensorEvent.values[1];
+					break;
+				// others
+				case Surface.ROTATION_180:
+					pitch = - sensorEvent.values[1];
+					roll = - sensorEvent.values[2];
+					break;
+				// others
+				case Surface.ROTATION_270:
+					pitch = sensorEvent.values[2];
 					roll = - sensorEvent.values[1];
 					break;
-				
-				
 				}
 				if (accelButton.isChecked() == true ){
 					float deltaRoll, deltaPitch;
