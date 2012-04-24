@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ArmPose extends Activity {
 
@@ -116,17 +117,27 @@ public class ArmPose extends Activity {
 				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -4.53949044585988,	-13.8783439490446, -5.29108280254778" );
 				break;
 			case R.id.arm_pick_up_plate_pose_button:
-				sendCommand("arm_joint_position, 0.0, -45.0171974522293, -45.0216560509554, -80.2656050955414, -5.00216560509554" );
+				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -47.0216560509554, -80.2656050955414, -5.00216560509554" );
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
+				sendCommand("arm_joint_position, 0.0, -45.0171974522293, -47.0216560509554, -80.2656050955414, -5.00216560509554" );
 				//sendCommand("arm_joint_position, 0.0, -45.0171974522293, -50.0216560509554, -78.2656050955414, 5.00216560509554" );
 				break;
 			case R.id.arm_pick_up_front_pose_button:
-				sendCommand("arm_joint_position, 0,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
-				break;
+				sendCommand("arm_joint_position, 0,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				//sendCommand("arm_joint_position, 0,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
+				break;	
 			case R.id.arm_pick_up_left_pose_button:
-				sendCommand("arm_joint_position, -90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
+				sendCommand("arm_joint_position, -90.040127388535,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				//sendCommand("arm_joint_position, -90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
 				break;
 			case R.id.arm_pick_up_right_pose_button:
-				sendCommand("arm_joint_position, 90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
+				sendCommand("arm_joint_position, 90.040127388535,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );				
+				//sendCommand("arm_joint_position, 90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
 				break;
 			case R.id.arm_zigzag_up_pose_button:
 				sendCommand("arm_joint_position, 0,	-40.0184713375796,	90.0452866242038,	-90.040127388535,	-90.040127388535" );
@@ -168,6 +179,7 @@ public class ArmPose extends Activity {
 	};
 	
 	private Handler bluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
 		public void handleMessage(Message message){	
 			switch (message.what){
@@ -177,6 +189,8 @@ public class ArmPose extends Activity {
 						setTitle("Connecting to "+youBot.getName());
 						break;
 					case BluetoothService.STATE_CONNECTED:
+						toastMessage = "Connected to "+youBot.getName();
+						Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 						setTitle("Connected to "+youBot.getName());		
 						break;
 					}

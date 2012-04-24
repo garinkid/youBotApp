@@ -224,6 +224,7 @@ public class ControllerShift extends Activity{
 	}
 	
 	private Handler bluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
 		public void handleMessage(Message message){	
 			switch (message.what){
@@ -233,6 +234,8 @@ public class ControllerShift extends Activity{
 						setTitle("Connecting to "+youBot.getName());
 						break;
 					case BluetoothService.STATE_CONNECTED:
+						toastMessage = "Connected to "+youBot.getName();
+						Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 						setTitle("Connected to "+youBot.getName());		
 						break;
 					}

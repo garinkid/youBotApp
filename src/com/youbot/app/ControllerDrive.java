@@ -235,6 +235,7 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 	}
 		
 	private Handler rBluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
 		public void handleMessage(Message message){
 			switch(message.what){
@@ -244,6 +245,8 @@ public class ControllerDrive extends Activity implements OnTouchListener{
 							setTitle("Connecting to "+youBot.getName());
 							break;
 						case BluetoothService.STATE_CONNECTED:
+							toastMessage = "Connected to "+youBot.getName();
+							Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 							setTitle("Connected to "+youBot.getName());		
 							break;
 					}

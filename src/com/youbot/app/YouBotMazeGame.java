@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -47,7 +48,7 @@ public class YouBotMazeGame extends Activity{
 	
 	private SensorManager sensorManager = null;
 	private Sensor orientSensor;
-	private int i, naturalOrientation;
+	private int i, naturalOrientation, deviceAPILevel;
     private WindowManager windowManager;
     private Display display; 
 	
@@ -65,9 +66,16 @@ public class YouBotMazeGame extends Activity{
 		setContentView(R.layout.maze_game);
 		setTitle("youBot Maze Game");
 		
-		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-        display = windowManager.getDefaultDisplay();
-		naturalOrientation = display.getRotation();
+		
+		deviceAPILevel = Integer.valueOf(android.os.Build.VERSION.SDK_INT);
+		
+		if (deviceAPILevel > 7){
+			windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+			display = windowManager.getDefaultDisplay();
+			naturalOrientation = display.getRotation();
+		}else{
+			naturalOrientation =  Surface.ROTATION_0;
+		}
 		
 		// get MAC address
 		Bundle controllerSimple = getIntent().getExtras();
@@ -243,6 +251,7 @@ public class YouBotMazeGame extends Activity{
 	}
 	
 	private Handler bluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
 		public void handleMessage(Message message){	
 			switch (message.what){
@@ -252,6 +261,8 @@ public class YouBotMazeGame extends Activity{
 						setTitle("Connecting to "+youBot.getName());
 						break;
 					case BluetoothService.STATE_CONNECTED:
+						toastMessage = "Connected to "+youBot.getName();
+						Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 						setTitle("Connected to "+youBot.getName());		
 						break;
 					}

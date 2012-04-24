@@ -93,7 +93,7 @@ public class ControllerAccel extends Activity{
 	int middleOffset = maxSeekBar / 2 ;
     private WindowManager windowManager;
     private Display display; 
-	private int naturalOrientation;
+	private int naturalOrientation, deviceAPILevel;
 	SeekBar angularSeekBar;
 	
 	public void onCreate(Bundle savedInstanceState){
@@ -101,9 +101,14 @@ public class ControllerAccel extends Activity{
 		if (D) Log.d(TAG, "onCreate");
 		setContentView(R.layout.controller_accel);
 		
-		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-        display = windowManager.getDefaultDisplay();
-		naturalOrientation = display.getRotation();
+		deviceAPILevel = Integer.valueOf(android.os.Build.VERSION.SDK_INT);
+		if (deviceAPILevel > 7){
+			windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+			display = windowManager.getDefaultDisplay();
+			naturalOrientation = display.getRotation();
+		}else{
+			naturalOrientation =  Surface.ROTATION_0;
+		}
 		//toggle button
 		accelButton = (ToggleButton)findViewById(R.id.accel_button);
 		accelButton.setOnClickListener(onClickListener);
@@ -331,6 +336,7 @@ public class ControllerAccel extends Activity{
 	}
 	
 	private Handler bluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
 		public void handleMessage(Message message){	
 			switch (message.what){
@@ -340,6 +346,8 @@ public class ControllerAccel extends Activity{
 						setTitle("Connecting to "+youBot.getName());
 						break;
 					case BluetoothService.STATE_CONNECTED:
+						toastMessage = "Connected to "+youBot.getName();
+						Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 						setTitle("Connected to "+youBot.getName());		
 						break;
 					}

@@ -82,8 +82,11 @@ public class BluetoothService {
 	private ConnectingThread rConnectingThread;
 	private ConnectedThread rConnectedThread;
 	
+	public Context contextBluetoothService;
+	
 	
 	public BluetoothService(Context context, Handler bluetoothHandler){
+		contextBluetoothService = context;
 		adapter = BluetoothAdapter.getDefaultAdapter();
 		rBluetoothHandler = bluetoothHandler;
 		rBluetoothState = STATE_NONE;

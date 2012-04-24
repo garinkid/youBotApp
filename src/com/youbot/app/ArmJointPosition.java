@@ -55,6 +55,7 @@ import com.youbot.app.R;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -108,6 +109,7 @@ public class ArmJointPosition extends Activity {
 	private Intent armController;
 	
 	double joint1, joint2, joint3, joint4, joint5;
+
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -173,6 +175,7 @@ public class ArmJointPosition extends Activity {
 			jointsEditText[i].setText(Float.toString(home[i]));
 		}
 	
+		
 		Bundle controllerSimple = getIntent().getExtras();
 		youBotAddress = controllerSimple.getString(YouBot.youBotAddressKey);
 		if(youBotAddress!=null){
@@ -393,8 +396,9 @@ public class ArmJointPosition extends Activity {
 	};
 	
 	public Handler bluetoothHandler = new Handler(){
+		String toastMessage;
 		@Override
-		public void handleMessage(Message message){	
+		public void handleMessage(Message message){
 			switch (message.what){
 				case BluetoothService.STATE_CHANGE:
 					switch(message.arg1){
@@ -402,6 +406,8 @@ public class ArmJointPosition extends Activity {
 						setTitle("Connecting to "+youBot.getName());
 						break;
 					case BluetoothService.STATE_CONNECTED:
+						toastMessage = "Connected to "+youBot.getName();
+						Toast.makeText(getBaseContext(), toastMessage.subSequence(0, toastMessage.length()), Toast.LENGTH_SHORT).show();
 						setTitle("Connected to "+youBot.getName());		
 						break;
 					}
