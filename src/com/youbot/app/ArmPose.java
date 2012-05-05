@@ -128,15 +128,63 @@ public class ArmPose extends Activity {
 				//sendCommand("arm_joint_position, 0.0, -45.0171974522293, -50.0216560509554, -78.2656050955414, 5.00216560509554" );
 				break;
 			case R.id.arm_pick_up_front_pose_button:
-				sendCommand("arm_joint_position, 0,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -4.53949044585988,	-13.8783439490446, -5.29108280254778" );
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				sendCommand("arm_joint_position, 0,	74.0376433121019,	-52.0223566878981,	50.0250955414013,	0" );
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// change joint 2 and 3
+				sendCommand("arm_joint_position, 0,	74.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				// original joint position
 				//sendCommand("arm_joint_position, 0,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
 				break;	
 			case R.id.arm_pick_up_left_pose_button:
-				sendCommand("arm_joint_position, -90.040127388535,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -4.53949044585988,	-13.8783439490446, -5.29108280254778" );
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				sendCommand("arm_joint_position, -90.040127388535,	74.0376433121019,	-52.0223566878981,	50.0250955414013,	0" );
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// change joint 2 and 3
+				sendCommand("arm_joint_position, -90.040127388535,	74.0376433121019,	42.0223566878981,	50.0250955414013,	0" );
+				// original joint position
 				//sendCommand("arm_joint_position, -90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
 				break;
 			case R.id.arm_pick_up_right_pose_button:
-				sendCommand("arm_joint_position, 90.040127388535,	75.0376433121019,	42.0223566878981,	50.0250955414013,	0" );				
+				sendCommand("arm_joint_position, 0.0853503184713418, 4.8445859872611, -4.53949044585988,	-13.8783439490446, -5.29108280254778" );
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				sendCommand("arm_joint_position, 90.040127388535,	74.0376433121019,	-52.0223566878981,	50.0250955414013,	0" );
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// change joint 2 and 3
+				sendCommand("arm_joint_position, 90.040127388535,	74.0376433121019,	42.0223566878981,	50.0250955414013,	0" );				
+				// original joint position
 				//sendCommand("arm_joint_position, 90.040127388535,	75.0376433121019,	45.0223566878981,	50.0250955414013,	0" );
 				break;
 			case R.id.arm_zigzag_up_pose_button:
