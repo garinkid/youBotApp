@@ -5,141 +5,102 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:padding = "20dip">
-	<LinearLayout android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
+	
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="0dp"
 		android:orientation="horizontal"
-		android:paddingBottom="10dip">
-		<TextView
-		    android:layout_width="wrap_content"
+		android:layout_weight="0.2"
+		android:gravity="center_vertical">
+		<TextView android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/arm_joint_velocity"
-		    android:textSize="20sp" />
-		<ImageView
-	        android:layout_width="fill_parent"
+		    android:textSize="35sp"/>
+		<TextView android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
-	        android:paddingLeft="80dip"
-	        android:scaleType="fitStart"
-	        android:src="@drawable/help00" 
+	        android:text="@string/help"
+	        android:textSize="20sp"
+	        android:gravity="right|center_vertical"
+	        android:textStyle="bold"	
+	        android:textColor="#FF6600"
 	        android:id= "@+id/help_button" />
 	</LinearLayout>
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical">
-		<LinearLayout
-			android:layout_width="fill_parent"
+	
+	<ScrollView android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="0.6"
+		android:fadeScrollbars="false">
+		<LinearLayout android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingTop="10dip"
-			android:orientation="horizontal">
-			<TextView android:text="@string/joint_1"
-				android:gravity="center_vertical"
-				android:layout_width = "wrap_content"
-				android:textSize = "20sp"
-				android:layout_height= "fill_parent"/>
-			<SeekBar
-			  android:id="@+id/slider_joint_1"
-			  android:layout_width="220dip"
-			  android:layout_height="wrap_content"
-			  android:paddingLeft="10dip"
-			  android:paddingRight="10dip"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
+			android:orientation="vertical">
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="@string/joint_1"
+					style="@style/joint_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />
+				<SeekBar android:id="@+id/slider_joint_1"
+				  	style="@style/joint_velocity_seekbar_xlarge"/>
+			</LinearLayout>
+			<View style="@style/empty_height_xlarge" />
+			
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="@string/joint_2"
+					style="@style/joint_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />
+				<SeekBar android:id="@+id/slider_joint_2"
+				  	style="@style/joint_velocity_seekbar_xlarge"/>
+			</LinearLayout>
+			<View style="@style/empty_height_xlarge" />
+			
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="@string/joint_3"
+					style="@style/joint_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />
+				<SeekBar android:id="@+id/slider_joint_3"
+				  	style="@style/joint_velocity_seekbar_xlarge"/>
+			</LinearLayout>
+			<View style="@style/empty_height_xlarge" />
+			
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="@string/joint_4"
+					style="@style/joint_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />
+				<SeekBar android:id="@+id/slider_joint_4"
+				  	style="@style/joint_velocity_seekbar_xlarge"/>
+			</LinearLayout>
+			<View style="@style/empty_height_xlarge" />
+			
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView android:text="@string/joint_5"
+					style="@style/joint_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />
+				<SeekBar android:id="@+id/slider_joint_5"
+				  	style="@style/joint_velocity_seekbar_xlarge"/>
+			</LinearLayout>
 		</LinearLayout>
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:paddingTop="10dip"
-			android:orientation="horizontal">
-			<TextView android:text="@string/joint_2"
-				android:gravity="center_vertical"
-				android:layout_width = "wrap_content"
-				android:textSize = "20sp"
-				android:layout_height= "fill_parent"/>
-			<SeekBar
-			  android:id="@+id/slider_joint_2"
-			  android:layout_width="220dip"
-			  android:layout_height="wrap_content"
-			  android:paddingLeft="10dip"
-			  android:paddingRight="10dip"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
-		</LinearLayout>
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:paddingTop="10dip"
-			android:orientation="horizontal">
-			<TextView android:text="@string/joint_3"
-				android:gravity="center_vertical"
-				android:layout_width = "wrap_content"
-				android:textSize = "20sp"
-				android:layout_height= "fill_parent"/>
-			<SeekBar
-			  android:id="@+id/slider_joint_3"
-			  android:layout_width="220dip"
-			  android:layout_height="wrap_content"
-			  android:paddingLeft="10dip"
-			  android:paddingRight="10dip"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
-		</LinearLayout>
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:paddingTop="10dip"
-			android:orientation="horizontal">
-			<TextView android:text="@string/joint_4"
-				android:gravity="center_vertical"
-				android:layout_width = "wrap_content"
-				android:textSize = "20sp"
-				android:layout_height= "fill_parent"/>
-			<SeekBar
-			  android:id="@+id/slider_joint_4"
-			  android:layout_width="220dip"
-			  android:layout_height="wrap_content"
-			  android:paddingLeft="10dip"
-			  android:paddingRight="10dip"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
-		</LinearLayout>
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:paddingTop="10dip"
-			android:orientation="horizontal">
-			<TextView android:text="@string/joint_5"
-				android:gravity="center_vertical"
-				android:layout_width = "wrap_content"
-				android:textSize = "20sp"
-				android:layout_height= "fill_parent"/>
-			<SeekBar
-			  android:id="@+id/slider_joint_5"
-			  android:layout_width="220dip"
-			  android:layout_height="wrap_content"
-			  android:paddingLeft="10dip"
-			  android:paddingRight="10dip"
-			  android:progressDrawable="@drawable/slider_main"
-			  android:thumb="@drawable/slider" />
-		</LinearLayout>
-	</LinearLayout>
-	<LinearLayout android:layout_width="wrap_content"
-			android:paddingTop = "30dip"
-			android:layout_height="wrap_content"
-			android:gravity = "bottom"
-			android:orientation="horizontal">
-			<Button
-				android:id="@+id/stop_button"
+	</ScrollView>
+	
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="0.2"
+			android:orientation="horizontal"
+			android:gravity="bottom">
+			<Button android:id="@+id/stop_button"
 				android:text="@string/stop"
-				android:textSize="15sp"
-				android:layout_height="wrap_content"
-				android:layout_width="150dip"
-				android:layout_weight="1"/>
-			<Button
-				android:id="@+id/change_mode"
+				style="@style/common_button_weighted_xlarge"
+				android:layout_weight="0.48"/>
+			<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.04"/>
+			<Button android:id="@+id/change_mode"
 				android:text="@string/controller_switch_mode"
-				android:textSize="15sp"
-				android:layout_height="wrap_content"
-				android:layout_width="150dip"
-				android:layout_weight="1"/>
+				style="@style/common_button_weighted_xlarge"
+				android:layout_weight="0.48"/>
 		</LinearLayout>
 </LinearLayout>

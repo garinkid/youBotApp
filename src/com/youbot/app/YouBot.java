@@ -59,7 +59,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.graphics.PorterDuff;
 import android.content.Intent;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 import android.app.AlertDialog;
@@ -78,7 +81,9 @@ public class YouBot extends Activity implements OnClickListener{
     private static final String TAG = "YouBot";   
     private static final boolean D = true;
     private static String youBotAddress = null;
-    
+    int deviceAPILevel;
+    private WindowManager windowManager;
+    private Display display; 
     public static String youBotAddressKey = "youBotAddressKey";
     
     @Override
@@ -91,12 +96,11 @@ public class YouBot extends Activity implements OnClickListener{
         
         View selectButton = this.findViewById(R.id.select_device_button); 
         selectButton.setOnClickListener(this);
-        selectButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
+        //selectButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
         
         View manipulatorButton = this.findViewById(R.id.manipulator_button);
         manipulatorButton.setOnClickListener(this);
-        manipulatorButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
-        /*
+             /*
         View motionProfileButton = this.findViewById(R.id.motion_profile_button);
         motionProfileButton.setOnClickListener(this);
         motionProfileButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
@@ -104,19 +108,15 @@ public class YouBot extends Activity implements OnClickListener{
         
         View controllerButton = this.findViewById(R.id.controller_button);
         controllerButton.setOnClickListener(this);
-        controllerButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
-        
+          
         View mazeGameButton = this.findViewById(R.id.maze_game);
         mazeGameButton.setOnClickListener(this);
-        mazeGameButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
-        
+           
         View quitButton = this.findViewById(R.id.quit_button);
         quitButton.setOnClickListener(this);
-        quitButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);   
-        
+          
         View helpButton = this.findViewById(R.id.help_button);
         helpButton.setOnClickListener(this);
-        helpButton.getBackground().setColorFilter(Color.parseColor("#FF6600"), PorterDuff.Mode.MULTIPLY);
         
     }
         

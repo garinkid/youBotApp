@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:padding="10dip" >
+    android:padding="20dip" >
 
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="0dp"
@@ -13,11 +13,11 @@
 		<TextView android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/arm_joint_position"
-		    android:textSize="20sp"/>
+		    android:textSize="35sp"/>
 		<TextView android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
 	        android:text="@string/help"
-	        android:textSize="15sp"
+	        android:textSize="20sp"
 	        android:gravity="right|center_vertical"
 	        android:textStyle="bold"	
 	        android:textColor="#FF6600"
@@ -37,96 +37,96 @@
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 				<TextView android:text="@string/joint_1"
-					style="@style/joint_text"/>	
-				<View style="@style/empty_width"/>	
+					style="@style/joint_text_xlarge"/>	
+				<View style="@style/empty_width_xlarge" />	
 				<EditText android:id="@+id/entry_joint_1"
-					style="@style/joint_position_edit_text"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+					style="@style/joint_position_edit_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 				    	android:src="@drawable/minus"
 						android:id="@+id/minus_joint_1"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 						android:src="@drawable/plus"
 						android:id="@+id/plus_joint_1"/>
 			</LinearLayout>
-			<View style="@style/empty_height"/>
+			<View style="@style/empty_height_xlarge" />	
 		
 			<LinearLayout android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 				<TextView android:text="@string/joint_2"
-					style="@style/joint_text"/>	
-				<View style="@style/empty_width"/>		
+					style="@style/joint_text_xlarge"/>	
+				<View style="@style/empty_width_xlarge" />		
 				<EditText android:id="@+id/entry_joint_2"
-					style="@style/joint_position_edit_text"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+					style="@style/joint_position_edit_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 				    	android:src="@drawable/minus"
 						android:id="@+id/minus_joint_2"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 						android:src="@drawable/plus"
 						android:id="@+id/plus_joint_2"/>
 			</LinearLayout>
-			<View style="@style/empty_height"/>
+			<View style="@style/empty_height_xlarge" />
 			
 			<LinearLayout android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 				<TextView android:text="@string/joint_3"
-					style="@style/joint_text"/>	
-				<View style="@style/empty_width"/>		
+					style="@style/joint_text_xlarge"/>	
+				<View style="@style/empty_width_xlarge" />		
 				<EditText android:id="@+id/entry_joint_3"
-					style="@style/joint_position_edit_text"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+					style="@style/joint_position_edit_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 				    	android:src="@drawable/minus"
 						android:id="@+id/minus_joint_3"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 						android:src="@drawable/plus"
 						android:id="@+id/plus_joint_3"/>
 			</LinearLayout>
-			<View style="@style/empty_height"/>
+			<View style="@style/empty_height_xlarge" />
 			
 			<LinearLayout android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 				<TextView android:text="@string/joint_4"
-					style="@style/joint_text"/>	
-				<View style="@style/empty_width"/>		
+					style="@style/joint_text_xlarge"/>	
+				<View style="@style/empty_width_xlarge" />		
 				<EditText android:id="@+id/entry_joint_4"
-					style="@style/joint_position_edit_text"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+					style="@style/joint_position_edit_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 				    	android:src="@drawable/minus"
 						android:id="@+id/minus_joint_4"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 						android:src="@drawable/plus"
 						android:id="@+id/plus_joint_4"/>
 			</LinearLayout>
-			<View style="@style/empty_height"/>
+			<View style="@style/empty_height_xlarge" />
 			
 			<LinearLayout android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 				<TextView android:text="@string/joint_5"
-					style="@style/joint_text"/>	
-				<View style="@style/empty_width"/>		
+					style="@style/joint_text_xlarge"/>	
+				<View style="@style/empty_width_xlarge" />		
 				<EditText android:id="@+id/entry_joint_5"
-					style="@style/joint_position_edit_text"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+					style="@style/joint_position_edit_text_xlarge"/>
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 				    	android:src="@drawable/minus"
 						android:id="@+id/minus_joint_5"/>
-				<View style="@style/empty_width"/>	
-				<ImageView style="@style/joint_position_plus_minus_button"
+				<View style="@style/empty_width_xlarge" />	
+				<ImageView style="@style/joint_position_plus_minus_button_xlarge"
 						android:src="@drawable/plus"
 						android:id="@+id/plus_joint_5"/>
 			</LinearLayout>
-			<View style="@style/empty_height"/>
+			<View style="@style/empty_height_xlarge" />
 			
 			<LinearLayout android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
@@ -134,11 +134,13 @@
 				<RadioButton android:id="@+id/radio_degree"
 		          android:layout_width="wrap_content"
 		          android:layout_height="wrap_content"
+		          android:textSize="35dp"
 		          android:text="@string/degree" />
-				<View android:layout_width="10dp" android:layout_height="fill_parent"/>
+				<View style="@style/empty_width_xlarge" />
 				<RadioButton android:id="@+id/radio_radian"
 		          android:layout_width="wrap_content"
 		          android:layout_height="wrap_content"
+		          android:textSize="35dp"
 		          android:text="@string/radian" />
 			</LinearLayout>
 		</LinearLayout>
@@ -151,12 +153,12 @@
 		android:orientation="horizontal">
 		<Button android:id="@+id/send_button"
 			android:text="@string/send"
-			style="@style/common_button_weighted"
+			style="@style/common_button_weighted_xlarge"
 			android:layout_weight="0.48"/>
 		<View android:layout_width="0dp" android:layout_height="fill_parent" android:layout_weight="0.04"/>
 		<Button android:id="@+id/change_mode"
 			android:text="@string/controller_switch_mode"
-			style="@style/common_button_weighted"
+			style="@style/common_button_weighted_xlarge"
 			android:layout_weight="0.48"/>
 	</LinearLayout>  
 </LinearLayout>
